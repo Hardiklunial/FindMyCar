@@ -1,0 +1,91 @@
+VehicleName,Brand name,Sales,Length,Width,Height,GroundClearance,FuelEfficiency,PriceMostExpensiveVariant,PriceCheapestVariant,MaintenanceCost,SafetyRating,BodyType,FuelType,Seats
+Swift,Maruti Suzuki,5246,3871,1735,1520,163,24.9,8.80,5.79,a,1,Hatchback,Petrol/CNG,5
+Baleno,Maruti Suzuki,16571,3990,1745,1540,170,22.35,9.10,5.90,a,4,Hatchback,Petrol/CNG,5
+Alto K10,Maruti Suzuki,14404,3530,1490,1520,160,22.9,5.84,3.99,a,2,Hatchback,Petrol/CNG,5
+Wagon R,Maruti Suzuki,15834,3655,1675,1675,165,20.5,7.20,5.54,a,1,Hatchback,Petrol/CNG,5
+Brezza,Maruti Suzuki,19284,3995,1790,1685,200,20,8.2,11.34,a,4,Compact SUV,Petrol/CNG,5
+Ertiga,Maruti Suzuki,13130,4395,1735,1690,185,22.3,13,8.80,a,4,MPV,Petrol/CNG,7
+Grand Vitara,Maruti Suzuki,14996,4345,1800,1645,210,21.19,19,10.77,a,5,SUV,Petrol/Hybrid,5
+Celerio,Maruti Suzuki,27062,3695,1655,1555,170,25.2,6.73,4.70,a,3,Hatchback,Petrol/CNG,5
+Nexon,Tata Motors,22211,3995,1811,1616,209,20,14.15,8,B,5,Compact SUV,Petrol/Diesel/CNG,5
+Punch,Tata Motors,6396,3827,1742,1615,187,20.08,9.30,5.50,B,5,Compact SUV,Petrol/CNG,5
+Harrier,Tata Motors,22072,4605,1916,1695,205,16.1,25.25,14,B,5,SUV,Diesel,5
+Safari,Tata Motors,2230,4668,1922,1795,20,15.75,26,14.66,B,5,SUV,Diesel,7
+Tiago,Tata Motors,24070,3765,1677,1537,170,20,7.8,4.57,B,4,Hatchback,Petrol/CNG,5
+Altroz,Tata Motors,26056,3990,1755,1523,165,20.35,10.5,6.30,B,5,Hatchback,Petrol/Diesel/CNG,5
+Tiago.ev,Tata Motors,19445,3765,1677,1537,170,240,11.1,8,A,5,Hatchback,EV,5
+Nexon.ev,Tata Motors,9135,3995,1811,1616,209,,17,7,9,4,SUV,EV,5
+Scorpio-N,Mahindra,21342,4662,1917,1857,187,13.8,27,16,2,4,SUV,Petrol,5
+XUV700,Mahindra,11167,4517,1780,1812,209,14.5,57,16,4,4,SUV,Petrol,7
+Thar,Mahindra,15899,4613,1891,1721,173,12.6,28,15,4,3,Off-Road SUV,Petrol,4
+Bolero,Mahindra,14794,4823,1990,1733,233,16.9,60,14,5,4,SUV,Petrol,5
+XUV300,Mahindra,4979,3939,1745,1662,167,19.5,32,9,8,3,Compact SUV,Petrol/Diesel,5
+XUV400.ev,Mahindra,10520,4367,1863,1711,200,,43,10,9,3,SUV,EV,5
+Creta,Hyundai,8164,4610,1965,1821,212,19.4,41,18,6,4,SUV,Diesel,5
+i20,Hyundai,9069,3565,1746,1591,208,22.4,50,18,2,3,Hatchback,Petrol,5
+Venue,Hyundai,24368,4109,1751,1734,220,21.1,57,16,5,5,Compact SUV,Petrol/Diesel,5
+Verna,Hyundai,18091,4801,1860,1540,211,19.1,48,14,2,4,Sedan,Petrol/Diesel,5
+Exter,Hyundai,11253,4163,1782,1620,206,28.6,32,18,4,3,Compact SUV,Petrol/CNG,5
+Grand i10 Nios,Hyundai,16869,3607,1671,1555,211,26.3,36,10,5,5,Hatchback,Petrol/CNG,5
+Tucson,Hyundai,17027,4595,1877,1650,178,15.4,47,18,3,4,SUV,Diesel,5
+IONIQ 5,Hyundai,17167,4509,1899,1833,194,,46,18,8,3,Crossover,EV,5
+Seltos,Kia,27348,4721,1949,1828,196,18.1,25,15,2,3,SUV,Diesel,5
+Sonet,Kia,2737,4167,1721,1738,188,20.4,33,9,7,5,Compact SUV,Petrol/Diesel,5
+Carens,Kia,4612,4619,1765,1801,163,19.4,55,11,7,4,MPV,Diesel,7
+Carnival,Kia,11021,4779,1778,1897,238,12.6,22,11,8,4,MPV,Petrol,6
+EV6,Kia,25583,4631,1940,1820,203,,53,10,3,5,Crossover,EV,5
+Innova Crysta,Toyota,20279,4653,1870,1830,221,15.5,53,18,2,5,MPV,Diesel,7
+Innova HyCross,Toyota,25671,4541,1811,1843,176,17.7,55,18,7,4,MPV,Petrol,6
+Fortuner,Toyota,26948,4554,1861,1757,150,21.9,46,12,6,5,SUV,Diesel,7
+Glanza,Toyota,8766,3427,1657,1550,209,23.9,60,16,5,3,Hatchback,Petrol,5
+Urban Cruiser Hyryder,Toyota,16871,4717,1922,1799,197,22.0,39,17,4,3,SUV,Petrol Mild Hybrid,5
+Camry Hybrid,Toyota,8158,4568,1987,1753,207,21.8,27,18,4,3,Crossover,Petrol Hybrid,5
+City,Honda,1641,4933,1713,1545,187,14.6,32,7,9,4,Sedan,Petrol,5
+Amaze,Honda,14344,4548,1771,1533,173,21.8,20,7,7,3,Sedan,Petrol Hybrid,5
+Elevate,Honda,9395,4909,1954,1726,191,20.8,52,15,5,4,SUV,Diesel,5
+WR-V,Honda,6495,4530,1859,1762,169,12.0,56,8,2,3,SUV,Petrol,5
+Kwid,Renault,25609,3622,1662,1537,206,21.7,15,4,6,4,Hatchback,Petrol,5
+Triber,Renault,6930,4570,1777,1776,177,18.9,17,7,8,3,MPV,Diesel,6
+Kiger,Renault,15167,4193,1700,1648,188,15.6,19,4,9,3,Compact SUV,Petrol,5
+C-Class,Mercedes-Benz,13320,4409,1820,1547,209,26.8,197,65,4,5,Sedan,Petrol Hybrid,5
+E-Class,Mercedes-Benz,28263,4663,1908,1526,235,15.4,149,47,3,5,Sedan,Petrol/Diesel,5
+S-Class,Mercedes-Benz,19188,4729,1889,1483,214,20.1,199,82,4,5,Sedan,Petrol/Diesel,5
+GLC,Mercedes-Benz,9831,4761,1837,1829,200,19.4,232,79,7,5,SUV,Diesel,5
+GLE,Mercedes-Benz,15175,4685,1932,1763,189,18.7,175,89,6,5,SUV,Diesel,7
+EQS,Mercedes-Benz,8053,4554,1891,1762,231,,215,45,7,5,SUV,EV,5
+3 Series,BMW,3235,5104,1709,1438,234,16.1,205,74,2,5,Sedan,Petrol/Diesel,5
+5 Series,BMW,2231,4964,1885,1420,211,24.9,175,45,2,5,Sedan,Petrol Hybrid,5
+X3,BMW,12990,4858,1868,1851,206,17.2,228,65,9,5,SUV,Diesel,7
+X5,BMW,7385,4438,1957,1719,240,20.3,111,81,7,5,SUV,Diesel,7
+i4,BMW,9870,4841,1923,1622,153,,137,69,7,5,SUV,EV,5
+i7,BMW,12542,4769,1834,1871,206,,216,79,3,5,SUV,EV,5
+M2,BMW,4416,4436,1811,1695,166,15.1,148,45,4,5,SUV,Diesel,5
+A4,Audi,12341,5010,1807,1483,158,23.3,185,88,2,5,Sedan,Petrol Hybrid,5
+A6,Audi,10852,4762,1851,1516,222,16.4,112,81,8,5,Sedan,Petrol/Diesel,5
+Q3,Audi,19576,4769,1844,1782,182,12.4,219,45,8,5,SUV,Petrol,5
+Q5,Audi,27277,4451,1835,1678,176,18.6,159,63,7,5,SUV,Diesel,7
+e-tron GT,Audi,8085,4575,1892,1835,186,,127,80,5,5,SUV,EV,5
+XC60,Volvo,2740,4888,1967,1692,233,12.2,199,77,9,5,SUV,Petrol,7
+S90,Volvo,13693,5068,1891,1453,172,26.5,242,45,8,5,Sedan,Petrol Hybrid,5
+C40 Recharge,Volvo,24473,4451,1820,1669,219,,205,78,5,5,SUV,EV,5
+Virtus,Volkswagen,7670,4833,1757,1482,211,22.0,49,18,9,5,Sedan,Petrol/Diesel,5
+Taigun,Volkswagen,26888,4386,1973,1701,230,16.0,54,13,2,4,SUV,Petrol,5
+Tiguan,Volkswagen,24188,4800,1997,1889,196,20.6,41,15,5,3,SUV,Diesel,5
+Slavia,Škoda,25027,4965,1777,1540,150,26.7,36,14,7,3,Sedan,Petrol Hybrid,5
+Kushaq,Škoda,12842,4357,1918,1894,159,17.7,48,18,4,4,SUV,Diesel,5
+Octavia,Škoda,15857,4825,1701,1468,198,18.1,53,14,9,4,Sedan,Petrol/Diesel,5
+Superb,Škoda,22433,4587,1783,1536,230,20.2,31,17,3,3,Sedan,Petrol/Diesel,5
+Hector,MG,13012,4756,1999,1805,210,12.1,38,12,3,5,SUV,Petrol,5
+Astor,MG,19868,4782,1955,1633,227,16.5,59,9,5,4,SUV,Petrol,5
+ZS EV,MG,17854,4699,1897,1695,178,,54,14,9,3,SUV,EV,5
+Comet EV,MG,12722,3591,1695,1530,153,,60,11,6,5,Hatchback,EV,5
+C3,Citroën,23343,3890,1717,1600,178,19.4,18,5,6,3,Hatchback,Petrol/Diesel,5
+C3 Aircross,Citroën,10023,4388,1958,1714,161,14.8,10,7,8,3,SUV,Petrol,5
+C5 Aircross,Citroën,9793,4938,1977,1838,167,16.4,18,9,5,4,SUV,Petrol,5
+Magnite,Nissan,15393,4185,1706,1668,182,17.9,12,4,8,5,Compact SUV,Petrol,5
+Kicks,Nissan,1946,4747,1804,1744,172,16.6,16,9,3,4,SUV,Petrol,5
+Compass,Jeep,25029,4580,1891,1701,233,14.3,42,12,3,4,SUV,petrol/Diesel,5
+Meridian,Jeep,12249,4880,1922,1744,194,12.3,22,18,8,5,SUV,Petrol,5
+Wrangler,Jeep,13105,4986,1786,1763,238,12.3,25,10,3,5,Off-Road SUV,Petrol,4
+F-Pace,Jaguar,13303,4492,1812,1856,206,17.9,169,77,5,5,SUV,Diesel,5
+I-Pace,Jaguar,9387,4324,1906,1716,162,,161,88,3,5,SUV,EV,5
