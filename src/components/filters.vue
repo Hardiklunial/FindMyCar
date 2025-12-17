@@ -89,6 +89,64 @@
           </div>
         </div>
       </div>
+
+      <!-- Sorting Preferences -->
+      <div class="max-w-2xl mx-auto mb-8">
+        <div class="glass-card rounded-3xl p-6 mb-6">
+          <h3 class="text-lg font-semibold text-gray-900 mb-4">Sorting Preferences</h3>
+          <p class="text-sm text-gray-600 mb-4">Rate how important each aspect is to you (1-10)</p>
+          
+          <div class="space-y-4">
+            <!-- Vehicle Size Importance -->
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="text-sm font-medium text-gray-700">Vehicle Size</label>
+                <span class="text-sm font-bold text-red-600">{{ filters.sizeImportance || 5 }}/10</span>
+              </div>
+              <input 
+                type="range" 
+                min="1" 
+                max="10" 
+                :value="filters.sizeImportance || 5"
+                @input="$emit('update:sizeImportance', parseInt($event.target.value))"
+                class="w-full"
+              />
+            </div>
+
+            <!-- Power Importance -->
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="text-sm font-medium text-gray-700">Power</label>
+                <span class="text-sm font-bold text-red-600">{{ filters.powerImportance || 5 }}/10</span>
+              </div>
+              <input 
+                type="range" 
+                min="1" 
+                max="10" 
+                :value="filters.powerImportance || 5"
+                @input="$emit('update:powerImportance', parseInt($event.target.value))"
+                class="w-full"
+              />
+            </div>
+
+            <!-- Safety Rating Importance -->
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="text-sm font-medium text-gray-700">Safety Rating</label>
+                <span class="text-sm font-bold text-red-600">{{ filters.safetyImportance || 5 }}/10</span>
+              </div>
+              <input 
+                type="range" 
+                min="1" 
+                max="10" 
+                :value="filters.safetyImportance || 5"
+                @input="$emit('update:safetyImportance', parseInt($event.target.value))"
+                class="w-full"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -111,7 +169,7 @@ export default {
       }),
     },
   },
-  emits: ['update:carType', 'update:fuelType', 'update:seats', 'update:budgetMin', 'update:budgetMax'],
+  emits: ['update:carType', 'update:fuelType', 'update:seats', 'update:budgetMin', 'update:budgetMax', 'update:sizeImportance', 'update:powerImportance', 'update:safetyImportance'],
 };
 </script>
 

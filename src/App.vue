@@ -63,18 +63,6 @@
           Answer a few questions. Get matched instantly.
         </p>
 
-        <!-- Filter Pills -->
-        <div class="flex flex-wrap justify-center gap-3 mb-8">
-          <button 
-            v-for="type in filterTypes" 
-            :key="type"
-            @click="toggleFilterType(type)"
-            :class="['filter-pill', { 'active': activeFilters.includes(type) }]"
-            class="px-6 py-3 rounded-full text-sm font-medium text-gray-900 cursor-pointer"
-          >
-            {{ type }}
-          </button>
-        </div>
 
         <!-- Filters Component -->
         <Filters 
@@ -84,6 +72,9 @@
           @update:seats="filters.seats = $event"
           @update:budgetMin="filters.budget.min = $event"
           @update:budgetMax="filters.budget.max = $event"
+          @update:sizeImportance="filters.sizeImportance = $event"
+          @update:powerImportance="filters.powerImportance = $event"
+          @update:safetyImportance="filters.safetyImportance = $event"
         />
 
         <!-- CTA Button -->
@@ -312,13 +303,15 @@ export default {
         fuelType: "",
         seats: "",
         budget: { min: 5, max: 30 },
+        sizeImportance: 5,
+        powerImportance: 5,
+        safetyImportance: 5,
       },
       vehicles: [],
       selectedVehicle: null,
       loading: false,
       errorMessage: '',
       activeFilters: [],
-      filterTypes: ['Sedan', 'SUV', 'Electric', 'Hybrid', 'Luxury', 'Budget'],
       showLoginModal: false,
     };
   },
@@ -335,16 +328,19 @@ export default {
         this.filters.budget.max = this.filters.budget.min;
       }
     },
+    // Watch all filters and save to localStorage whenever they change
+    filters: {
+      handler(newFilters) {
+        this.saveFiltersToSession(newFilters);
+      },
+      deep: true, // Watch nested properties like budget.min and budget.max
+    },
+  },
+  mounted() {
+    // Load saved filters when app starts
+    this.loadFiltersFromSession();
   },
   methods: {
-    toggleFilterType(type) {
-      const index = this.activeFilters.indexOf(type);
-      if (index > -1) {
-        this.activeFilters.splice(index, 1);
-      } else {
-        this.activeFilters.push(type);
-      }
-    },
     async suggestCars() {
       this.loading = true;
       this.errorMessage = '';
@@ -545,6 +541,38 @@ export default {
         }
       } else {
         console.error('Invalid link:', link);
+      }
+    },
+    // Save filters to browser's localStorage (session persistence)
+    saveFiltersToSession(filters) {
+      try {
+        localStorage.setItem('carFilters', JSON.stringify(filters));
+      } catch (error) {
+        console.error('Error saving filters to session:', error);
+      }
+    },
+    // Load filters from browser's localStorage
+    loadFiltersFromSession() {
+      try {
+        const savedFilters = localStorage.getItem('carFilters');
+        if (savedFilters) {
+          const parsedFilters = JSON.parse(savedFilters);
+          // Restore all filter values
+          this.filters = {
+            carType: parsedFilters.carType || "",
+            fuelType: parsedFilters.fuelType || "",
+            seats: parsedFilters.seats || "",
+            budget: {
+              min: parsedFilters.budget?.min || 5,
+              max: parsedFilters.budget?.max || 30,
+            },
+            sizeImportance: parsedFilters.sizeImportance || 5,
+            powerImportance: parsedFilters.powerImportance || 5,
+            safetyImportance: parsedFilters.safetyImportance || 5,
+          };
+        }
+      } catch (error) {
+        console.error('Error loading filters from session:', error);
       }
     },
   },

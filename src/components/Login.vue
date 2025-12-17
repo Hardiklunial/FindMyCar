@@ -19,6 +19,10 @@
     <p v-if="isRegistrationSuccessfull">Registration Successfull Please Login To Continue</p>
   </div>
   <form class="add-form" @submit="onSubmit" v-if="isLoginActive || isRegisterActive">
+    <div v-if="isRegisterActive" class="form-control">
+      <label>Name</label>
+      <input type="text" v-model="name" name="name" placeholder="Your Name" />
+    </div>
     <div class="form-control">
       <label>Email</label>
       <input type="email" v-model="email" name="email" placeholder="Email" />
@@ -40,6 +44,7 @@ export default {
   name: 'Login',
   data() {
     return {
+      name: '',
       email: '',
       password: '',
       isLoginActive: false,
@@ -59,19 +64,39 @@ export default {
       this.isLoginActive = !this.isLoginActive;
       this.isRegisterActive = false;
       this.isRegistrationSuccessfull = false;
+      this.name = '';
+      this.email = '';
+      this.password = '';
     },
     handleRegister() {
       this.isRegisterActive = !this.isRegisterActive;
       this.isLoginActive = false;
       this.isRegistrationSuccessfull = false;
+      this.name = '';
+      this.email = '';
+      this.password = '';
     },
     async onSubmit(e) {
       e.preventDefault();
+      
+      // Validation for registration
+      if (this.isRegisterActive) {
+        if (!this.name || this.name.trim().length < 2) {
+          alert('Please enter a valid name (at least 2 characters)');
+          return;
+        }
+      }
+      
       if (this.email.length > 6 && this.email.includes('@') && this.password.length > 6) {
         const user = {
           email: this.email,
           password: bcrypt.hashSync(this.password, 10),
         };
+
+        // Add name for registration
+        if (this.isRegisterActive) {
+          user.name = this.name.trim();
+        }
 
         if (this.isRegisterActive) {
           const userName = await fetch(`${localHost}/users?email=${this.email}`);
@@ -137,7 +162,7 @@ export default {
 
 .form-control label {
   display: block;
-  color: #fff;
+  color: #1f2937;
   margin-bottom: 5px;
   font-weight: 500;
 }
@@ -148,20 +173,20 @@ export default {
   margin: 5px 0;
   padding: 3px 7px;
   font-size: 17px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 6px;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
+  background: rgba(255, 255, 255, 0.9);
+  color: #1f2937;
 }
 
 .form-control input::placeholder {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.5);
 }
 
 .form-control input:focus {
   outline: none;
   border-color: #D90429;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 1);
 }
 
 .form-control-check {
