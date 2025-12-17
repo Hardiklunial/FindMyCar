@@ -144,6 +144,54 @@
                 class="w-full"
               />
             </div>
+
+            <!-- Popularity Importance -->
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="text-sm font-medium text-gray-700">Popularity</label>
+                <span class="text-sm font-bold text-red-600">{{ filters.popularityImportance || 5 }}/10</span>
+              </div>
+              <input 
+                type="range" 
+                min="1" 
+                max="10" 
+                :value="filters.popularityImportance || 5"
+                @input="$emit('update:popularityImportance', parseInt($event.target.value))"
+                class="w-full"
+              />
+            </div>
+
+            <!-- Fuel Efficiency Importance -->
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="text-sm font-medium text-gray-700">Fuel Efficiency</label>
+                <span class="text-sm font-bold text-red-600">{{ filters.fuelEfficiencyImportance || 5 }}/10</span>
+              </div>
+              <input 
+                type="range" 
+                min="1" 
+                max="10" 
+                :value="filters.fuelEfficiencyImportance || 5"
+                @input="$emit('update:fuelEfficiencyImportance', parseInt($event.target.value))"
+                class="w-full"
+              />
+            </div>
+
+            <!-- Maintenance Cost Importance -->
+            <div>
+              <div class="flex justify-between items-center mb-2">
+                <label class="text-sm font-medium text-gray-700">Maintenance Cost</label>
+                <span class="text-sm font-bold text-red-600">{{ filters.maintenanceCostImportance || 5 }}/10</span>
+              </div>
+              <input 
+                type="range" 
+                min="1" 
+                max="10" 
+                :value="filters.maintenanceCostImportance || 5"
+                @input="$emit('update:maintenanceCostImportance', parseInt($event.target.value))"
+                class="w-full"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -169,7 +217,7 @@ export default {
       }),
     },
   },
-  emits: ['update:carType', 'update:fuelType', 'update:seats', 'update:budgetMin', 'update:budgetMax', 'update:sizeImportance', 'update:powerImportance', 'update:safetyImportance'],
+  emits: ['update:carType', 'update:fuelType', 'update:seats', 'update:budgetMin', 'update:budgetMax', 'update:sizeImportance', 'update:powerImportance', 'update:safetyImportance', 'update:popularityImportance', 'update:fuelEfficiencyImportance', 'update:maintenanceCostImportance'],
 };
 </script>
 

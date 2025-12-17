@@ -132,7 +132,12 @@ export default {
             if (doesPasswordMatch) {
               console.log('Password Matches');
               this.isLoginActive = false;
-              this.$store.commit('userAuthenticated', existingUserNameData[0].email);
+              const userData = {
+                email: existingUserNameData[0].email,
+                id: existingUserNameData[0].id,
+                name: existingUserNameData[0].name || 'User',
+              };
+              this.$store.commit('userAuthenticated', userData);
               this.$emit('user-authenticated');
             } else {
               alert('Password Incorrect');

@@ -50,10 +50,9 @@
     </div>
 
     <!-- Hero Section -->
-    <section class="w-full min-h-screen flex items-center justify-center px-6 pt-20 relative" :style="{ paddingRight: vehicles.length === 0 ? '420px' : '0' }">
+    <section class="w-full min-h-screen flex items-center justify-center px-6 pt-20 relative" :style="{ paddingLeft: vehicles.length === 0 ? '420px' : '0' }">
       <!-- Main Content -->
       <div class="max-w-5xl w-full text-center fade-in">
-        <div class="minimal-badge mb-8">AI-Powered Matching</div>
         
         <h1 class="text-5xl md:text-7xl font-bold mb-6 text-gray-900 leading-tight">
           Find the Perfect Car for You
@@ -75,6 +74,9 @@
           @update:sizeImportance="filters.sizeImportance = $event"
           @update:powerImportance="filters.powerImportance = $event"
           @update:safetyImportance="filters.safetyImportance = $event"
+          @update:popularityImportance="filters.popularityImportance = $event"
+          @update:fuelEfficiencyImportance="filters.fuelEfficiencyImportance = $event"
+          @update:maintenanceCostImportance="filters.maintenanceCostImportance = $event"
         />
 
         <!-- CTA Button -->
@@ -92,7 +94,7 @@
         </div>
       </div>
 
-      <!-- Horizontal News Window - Right Side (Cursor-style) -->
+      <!-- Horizontal News Window - Left Side -->
       <div v-if="vehicles.length === 0" class="news-window-horizontal">
         <News />
       </div>
@@ -264,6 +266,58 @@
             Visit Official Website
           </a>
 
+          <!-- Comments Section -->
+          <div class="mt-8 border-t border-gray-200 pt-6">
+            <h4 class="text-xl font-bold text-gray-900 mb-4">💬 Comments ({{ vehicleComments.length }})</h4>
+            
+            <!-- Comment Form (only for logged in users) -->
+            <div v-if="isUserLoggedIn" class="mb-6">
+              <textarea
+                v-model="newComment"
+                placeholder="Write your comment..."
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 bg-white focus:outline-none focus:border-red-600 resize-none"
+                rows="3"
+              ></textarea>
+              <button
+                @click="submitComment"
+                :disabled="!newComment.trim()"
+                class="mt-2 px-6 py-2 bg-red-600 text-white rounded-lg font-semibold hover:bg-red-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                Post Comment
+              </button>
+            </div>
+            <div v-else class="mb-4 text-sm text-gray-600">
+              <p>Please <button @click="showLoginModal = true" class="text-red-600 hover:underline font-semibold">login</button> to leave a comment.</p>
+            </div>
+
+            <!-- Comments List -->
+            <div class="space-y-4 max-h-64 overflow-y-auto">
+              <div v-if="vehicleComments.length === 0" class="text-gray-500 text-sm py-4">
+                No comments yet. Be the first to comment!
+              </div>
+              <div
+                v-for="comment in vehicleComments"
+                :key="comment.id"
+                class="bg-gray-50 rounded-lg p-4 border border-gray-200"
+              >
+                <div class="flex items-start justify-between mb-2">
+                  <div>
+                    <span class="font-semibold text-gray-900">{{ comment.userName }}</span>
+                  </div>
+                  <button
+                    v-if="isUserLoggedIn && comment.userId === userId"
+                    @click="deleteComment(comment.id)"
+                    class="text-red-600 hover:text-red-800 text-sm font-medium ml-2"
+                    title="Delete comment"
+                  >
+                    Delete
+                  </button>
+                </div>
+                <p class="text-gray-700">{{ comment.comment }}</p>
+              </div>
+            </div>
+          </div>
+
           <button 
             @click="selectedVehicle = null" 
             class="mt-4 w-full button-modern bg-gray-700 text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-600 transition"
@@ -280,6 +334,7 @@
 import Login from './components/Login.vue';
 import Filters from './components/filters.vue';
 import News from './components/news.vue';
+import { localHost } from './utils/urls';
 
 export default {
   name: "App",
@@ -295,6 +350,16 @@ export default {
     userEmail() {
       return this.$store.state.userEmail;
     },
+    userId() {
+      return this.$store.state.userId;
+    },
+    userName() {
+      return this.$store.state.userName;
+    },
+    vehicleComments() {
+      if (!this.selectedVehicle) return [];
+      return this.comments.filter(c => c.vehicleName === this.selectedVehicle.VehicleName);
+    },
   },
   data() {
     return {
@@ -306,6 +371,9 @@ export default {
         sizeImportance: 5,
         powerImportance: 5,
         safetyImportance: 5,
+        popularityImportance: 5,
+        fuelEfficiencyImportance: 5,
+        maintenanceCostImportance: 5,
       },
       vehicles: [],
       selectedVehicle: null,
@@ -313,6 +381,8 @@ export default {
       errorMessage: '',
       activeFilters: [],
       showLoginModal: false,
+      comments: [],
+      newComment: '',
     };
   },
   watch: {
@@ -334,6 +404,13 @@ export default {
         this.saveFiltersToSession(newFilters);
       },
       deep: true, // Watch nested properties like budget.min and budget.max
+    },
+    selectedVehicle() {
+      // Comments are already filtered by computed property vehicleComments
+      // No need to fetch again, just ensure comments are loaded
+      if (this.comments.length === 0) {
+        this.fetchComments();
+      }
     },
   },
   mounted() {
@@ -569,10 +646,84 @@ export default {
             sizeImportance: parsedFilters.sizeImportance || 5,
             powerImportance: parsedFilters.powerImportance || 5,
             safetyImportance: parsedFilters.safetyImportance || 5,
+            popularityImportance: parsedFilters.popularityImportance || 5,
+            fuelEfficiencyImportance: parsedFilters.fuelEfficiencyImportance || 5,
+            maintenanceCostImportance: parsedFilters.maintenanceCostImportance || 5,
           };
         }
       } catch (error) {
         console.error('Error loading filters from session:', error);
+      }
+    },
+    // Fetch all comments
+    async fetchComments() {
+      try {
+        const response = await fetch(`${localHost}/comments`);
+        if (response.ok) {
+          this.comments = await response.json();
+        }
+      } catch (error) {
+        console.error('Error fetching comments:', error);
+      }
+    },
+    // Submit a new comment
+    async submitComment() {
+      if (!this.newComment.trim() || !this.isUserLoggedIn || !this.selectedVehicle) {
+        return;
+      }
+
+      try {
+        const comment = {
+          vehicleName: this.selectedVehicle.VehicleName,
+          userId: this.userId,
+          userName: this.userName,
+          comment: this.newComment.trim(),
+        };
+
+        const response = await fetch(`${localHost}/comments`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(comment),
+        });
+
+        if (response.ok) {
+          this.newComment = '';
+          // Refresh comments
+          await this.fetchComments();
+        } else {
+          alert('Failed to post comment. Please try again.');
+        }
+      } catch (error) {
+        console.error('Error submitting comment:', error);
+        alert('Error posting comment. Please try again.');
+      }
+    },
+    // Delete a comment
+    async deleteComment(commentId) {
+      if (!this.isUserLoggedIn) {
+        return;
+      }
+
+      if (!confirm('Are you sure you want to delete this comment?')) {
+        return;
+      }
+
+      try {
+        const response = await fetch(`${localHost}/comments/${commentId}`, {
+          method: 'DELETE',
+        });
+
+        if (response.ok) {
+          // Refresh comments after deletion
+          await this.fetchComments();
+        } else {
+          alert('Failed to delete comment. Please try again.');
+        }
+      } catch (error) {
+        console.error('Error deleting comment:', error);
+        alert('Error deleting comment. Please try again.');
       }
     },
   },
@@ -765,17 +916,17 @@ select option {
   color: #1f2937;
 }
 
-/* Horizontal News Window Styles - Cursor-style */
+/* Horizontal News Window Styles - Left Side */
 .news-window-horizontal {
   position: fixed;
   top: 80px;
-  right: 0;
+  left: 0;
   width: 400px;
   height: calc(100vh - 80px);
   z-index: 30;
   background: rgba(255, 255, 255, 0.98);
-  border-left: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.1);
   overflow-y: auto;
 }
 
@@ -793,7 +944,7 @@ select option {
     bottom: 0;
     left: 0;
     right: 0;
-    border-left: none;
+    border-right: none;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
   }

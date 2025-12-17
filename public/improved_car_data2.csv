@@ -1,92 +1,92 @@
 VehicleName,Brand name,Sales,Length,Width,Height,GroundClearance,FuelEfficiency,PriceMostExpensiveVariant,PriceCheapestVariant,MaintenanceCost,SafetyRating,BodyType,FuelType,Seats,Power,Link
-Swift,Maruti Suzuki,5246,3871,1735,1520,163,24.9,8.80,5.79,a,1,Hatchback,Petrol/CNG,5,80.5,
-Baleno,Maruti Suzuki,16571,3990,1745,1540,170,22.35,9.10,5.90,a,4,Hatchback,Petrol/CNG,5,88.5,
-Alto K10,Maruti Suzuki,14404,3530,1490,1520,160,22.9,5.84,3.99,a,2,Hatchback,Petrol/CNG,5,67,
-Wagon R,Maruti Suzuki,15834,3655,1675,1675,165,20.5,7.20,5.54,a,1,Hatchback,Petrol/CNG,5,66,
-Brezza,Maruti Suzuki,19284,3995,1790,1685,200,20,8.2,11.34,a,4,SUV,Petrol/CNG,5,103,
-Ertiga,Maruti Suzuki,13130,4395,1735,1690,185,22.3,13,8.80,a,4,MPV,Petrol/CNG,7,101,
-Grand Vitara,Maruti Suzuki,14996,4345,1800,1645,210,21.19,19,10.77,a,5,SUV,Petrol/Hybrid,5,100,
-Celerio,Maruti Suzuki,27062,3695,1655,1555,170,25.2,6.73,4.70,a,3,Hatchback,Petrol/CNG,5,68,
-Nexon,Tata Motors,22211,3995,1811,1616,209,20,14.15,8,B,5,SUV,Petrol/Diesel/CNG,5,116,
-Punch,Tata Motors,6396,3827,1742,1615,187,20.08,9.30,5.50,B,5,SUV,Petrol/CNG,5,88,
-Harrier,Tata Motors,22072,4605,1916,1695,205,16.1,25.25,14,B,5,SUV,Diesel,5,167,
-Safari,Tata Motors,2230,4668,1922,1795,20,15.75,26,14.66,B,5,SUV,Diesel,7,167,
-Tiago,Tata Motors,24070,3765,1677,1537,170,20,7.8,4.57,B,4,Hatchback,Petrol/CNG,5,86,
-Altroz,Tata Motors,26056,3990,1755,1523,165,20.35,10.5,6.30,B,5,Hatchback,Petrol/Diesel/CNG,5,105,
-Tiago.ev,Tata Motors,19445,3765,1677,1537,170,240,11.1,8,A,5,Hatchback,EV,5,70,
-Nexon.ev,Tata Motors,9135,3995,1811,1616,209,,17,7,A,4,SUV,EV,5,140,
-Scorpio-N,Mahindra,21342,4662,1917,1857,187,13.8,27,16,A,4,SUV,Petrol/Diesel,5,180,
-XUV700,Mahindra,11167,4517,1780,1812,209,14.5,57,16,A,4,SUV,Petrol/Diesel,7,180,
-Thar,Mahindra,15899,4613,1891,1721,173,12.6,28,15,a,3,SUV,Petrol/Diesel,4,135,
-Bolero,Mahindra,14794,4823,1990,1733,233,16.9,60,14,a,4,SUV,Diesel,5,95,
-XUV300,Mahindra,4979,3939,1745,1662,167,19.5,32,9,a,3,SUV,Petrol/Diesel,5,117,
-XUV400.ev,Mahindra,10520,4367,1863,1711,200,,43,10,a,3,SUV,EV,5,150,
-Creta,Hyundai,8164,4610,1965,1821,212,19.4,41,18,b,4,SUV,Petrol/Diesel,5,160,
-i20,Hyundai,9069,3565,1746,1591,208,22.4,50,18,b,3,Hatchback,Petrol,5,110,
-Venue,Hyundai,24368,4109,1751,1734,220,21.1,57,16,b,5,SUV,Petrol,5,110,
-Verna,Hyundai,18091,4801,1860,1540,211,19.1,48,14,b,4,Sedan,Petrol/Diesel,5,140,
-Exter,Hyundai,11253,4163,1782,1620,206,28.6,32,18,b,3,SUV,Petrol/CNG,5,90,
-Grand i10 Nios,Hyundai,16869,3607,1671,1555,211,26.3,36,10,b,5,Hatchback,Petrol/CNG,5,85,
-Tucson,Hyundai,17027,4595,1877,1650,178,15.4,47,18,b,4,SUV,Diesel,5,170,
-IONIQ 5,Hyundai,17167,4509,1899,1833,194,,46,18,a,3,Crossover,EV,5,217,
-Seltos,Kia,27348,4721,1949,1828,196,18.1,25,15,b,3,SUV,Diesel,5,160,
-Sonet,Kia,2737,4167,1721,1738,188,20.4,33,9,b,5,SUV,Petrol/Diesel,5,110,
-Carens,Kia,4612,4619,1765,1801,163,19.4,55,11,b,4,MPV,Diesel,7,100,
-Carnival,Kia,11021,4779,1778,1897,238,12.6,22,11,b,4,MPV,Petrol,6,150,
-EV6,Kia,25583,4631,1940,1820,203,,53,10,a,5,Crossover,EV,5,250,
-Innova Crysta,Toyota,20279,4653,1870,1830,221,15.5,53,18,a,5,MPV,Diesel,7,150,
-Innova HyCross,Toyota,25671,4541,1811,1843,176,17.7,55,18,a,4,MPV,Petrol,6,160,
-Fortuner,Toyota,26948,4554,1861,1757,150,21.9,46,12,a,5,SUV,Diesel,7,201,
-Glanza,Toyota,8766,3427,1657,1550,209,23.9,60,16,a,3,Hatchback,Petrol,5,85,
-Urban Cruiser Hyryder,Toyota,16871,4717,1922,1799,197,22.0,39,17,a,3,SUV,Petrol/Hybrid,5,100,
-Camry Hybrid,Toyota,8158,4568,1987,1753,207,21.8,27,18,a,3,Crossover,Hybrid,5,230,
-City,Honda,1641,4933,1713,1545,187,14.6,32,7,a,4,Sedan,Petrol,5,150,
-Amaze,Honda,14344,4548,1771,1533,173,21.8,20,7,a,3,Sedan,Petrol Hybrid,5,90,
-Elevate,Honda,9395,4909,1954,1726,191,20.8,52,15,a,4,SUV,Diesel,5,119,
-WR-V,Honda,6495,4530,1859,1762,169,12.0,56,8,a,3,SUV,Petrol,5,119,
-Kwid,Renault,25609,3622,1662,1537,206,21.7,15,4,a,4,Hatchback,Petrol,5,67,
-Triber,Renault,6930,4570,1777,1776,177,18.9,17,7,a,3,MPV,Diesel,6,72,
-Kiger,Renault,15167,4193,1700,1648,188,15.6,19,4,a,3,SUV,Petrol,5,90,
-C-Class,Mercedes-Benz,13320,4409,1820,1547,209,26.8,197,65,c,5,Sedan,Hybrid,5,200,
-E-Class,Mercedes-Benz,28263,4663,1908,1526,235,15.4,149,47,c,5,Sedan,Petrol/Diesel,5,250,
-S-Class,Mercedes-Benz,19188,4729,1889,1483,214,20.1,199,82,c,5,Sedan,Petrol/Diesel,5,282,
-GLC,Mercedes-Benz,9831,4761,1837,1829,200,19.4,232,79,c,5,SUV,Diesel,5,250,
-GLE,Mercedes-Benz,15175,4685,1932,1763,189,18.7,175,89,c,5,SUV,Diesel,7,270,
-EQS,Mercedes-Benz,8053,4554,1891,1762,231,,215,45,b,5,SUV,EV,5,355,
-3 Series,BMW,3235,5104,1709,1438,234,16.1,205,74,c,5,Sedan,Petrol/Diesel,5,190,
-5 Series,BMW,2231,4964,1885,1420,211,24.9,175,45,c,5,Sedan,Hybrid,5,190,
-X3,BMW,12990,4858,1868,1851,206,17.2,228,65,c,5,SUV,Diesel,7,197,
-X5,BMW,7385,4438,1957,1719,240,20.3,111,81,c,5,SUV,Diesel,7,375,
-i4,BMW,9870,4841,1923,1622,153,,137,69,b,5,SUV,EV,5,340,
-i7,BMW,12542,4769,1834,1871,206,,216,79,b,5,SUV,EV,5,536,
-M340i,BMW,3235,5104,1709,1438,234,16.1,74,73,c,5,Sedan,Petrol,5,370,
+Swift,Maruti Suzuki,5246,3871,1735,1520,163,24.9,8.80,5.79,a,1,Hatchback,Petrol/CNG,5,80.5,https://www.marutisuzuki.com/swift
+Baleno,Maruti Suzuki,16571,3990,1745,1540,170,22.35,9.10,5.90,a,4,Hatchback,Petrol/CNG,5,88.5,https://www.nexaexperience.com/baleno
+Alto K10,Maruti Suzuki,14404,3530,1490,1520,160,22.9,5.84,3.99,a,2,Hatchback,Petrol/CNG,5,67,https://www.marutisuzuki.com/arena/alto-k10?…
+Wagon R,Maruti Suzuki,15834,3655,1675,1675,165,20.5,7.20,5.54,a,1,Hatchback,Petrol/CNG,5,66,https://www.marutisuzuki.com/arena/wagon-r
+Brezza,Maruti Suzuki,19284,3995,1790,1685,200,20,8.2,11.34,a,4,SUV,Petrol/CNG,5,103,https://www.marutisuzuki.com/arena/brezza
+Ertiga,Maruti Suzuki,13130,4395,1735,1690,185,22.3,13,8.80,a,4,MPV,Petrol/CNG,7,101,https://www.marutisuzuki.com/arena/ertiga
+Grand Vitara,Maruti Suzuki,14996,4345,1800,1645,210,21.19,19,10.77,a,5,SUV,Petrol/Hybrid,5,100,https://www.nexaexperience.com/grand-vitara
+Celerio,Maruti Suzuki,27062,3695,1655,1555,170,25.2,6.73,4.70,a,3,Hatchback,Petrol/CNG,5,68,https://www.marutisuzuki.com/arena/celerio
+Nexon,Tata Motors,22211,3995,1811,1616,209,20,14.15,8,B,5,SUV,Petrol/Diesel/CNG,5,116,https://cars.tatamotors.com/nexon/ice.html
+Punch,Tata Motors,6396,3827,1742,1615,187,20.08,9.30,5.50,B,5,SUV,Petrol/CNG,5,88,https://cars.tatamotors.com/punch/ice.html
+Harrier,Tata Motors,22072,4605,1916,1695,205,16.1,25.25,14,B,5,SUV,Diesel,5,167,https://cars.tatamotors.com/harrier/ice.html
+Safari,Tata Motors,2230,4668,1922,1795,20,15.75,26,14.66,B,5,SUV,Diesel,7,167,https://cars.tatamotors.com/safari/ice.html
+Tiago,Tata Motors,24070,3765,1677,1537,170,20,7.8,4.57,B,4,Hatchback,Petrol/CNG,5,86,https://cars.tatamotors.com/tiago/ice.html
+Altroz,Tata Motors,26056,3990,1755,1523,165,20.35,10.5,6.30,B,5,Hatchback,Petrol/Diesel/CNG,5,105,https://cars.tatamotors.com/altroz/ice.html
+Tiago.ev,Tata Motors,19445,3765,1677,1537,170,240,11.1,8,A,5,Hatchback,EV,5,70,https://ev.tatamotors.com/tiago/ev.html
+Nexon.ev,Tata Motors,9135,3995,1811,1616,209,,17,7,A,4,SUV,EV,5,140,https://ev.tatamotors.com/nexon/ev.html
+Scorpio-N,Mahindra,21342,4662,1917,1857,187,13.8,27,16,A,4,SUV,Petrol/Diesel,5,180,https://auto.mahindra.com/suv/scorpio-n/SCN.html
+XUV700,Mahindra,11167,4517,1780,1812,209,14.5,57,16,A,4,SUV,Petrol/Diesel,7,180,https://auto.mahindra.com/suv/xuv700/X700.html
+Thar,Mahindra,15899,4613,1891,1721,173,12.6,28,15,a,3,SUV,Petrol/Diesel,4,135,https://auto.mahindra.com/suv/thar/THRN.html
+Bolero,Mahindra,14794,4823,1990,1733,233,16.9,60,14,a,4,SUV,Diesel,5,95,https://auto.mahindra.com/suv/bolero/BOL.html
+XUV300,Mahindra,4979,3939,1745,1662,167,19.5,32,9,a,3,SUV,Petrol/Diesel,5,117,https://auto.mahindra.com/suv/xuv3xo/X3XO.html
+XUV400.ev,Mahindra,10520,4367,1863,1711,200,,43,10,a,3,SUV,EV,5,150,https://auto.mahindra.com/suv/xuv400/X400.html
+Creta,Hyundai,8164,4610,1965,1821,212,19.4,41,18,b,4,SUV,Petrol/Diesel,5,160,https://www.hyundai.com/in/en/find-a-car/creta/highlights
+i20,Hyundai,9069,3565,1746,1591,208,22.4,50,18,b,3,Hatchback,Petrol,5,110,https://www.hyundai.com/in/en/find-a-car/i20/highlights
+Venue,Hyundai,24368,4109,1751,1734,220,21.1,57,16,b,5,SUV,Petrol,5,110,https://www.hyundai.com/in/en/find-a-car/venue/highlights
+Verna,Hyundai,18091,4801,1860,1540,211,19.1,48,14,b,4,Sedan,Petrol/Diesel,5,140,https://www.hyundai.com/in/en/find-a-car/verna/highlights
+Exter,Hyundai,11253,4163,1782,1620,206,28.6,32,18,b,3,SUV,Petrol/CNG,5,90,https://www.hyundai.com/in/en/find-a-car/exter/highlights
+Grand i10 Nios,Hyundai,16869,3607,1671,1555,211,26.3,36,10,b,5,Hatchback,Petrol/CNG,5,85,https://www.hyundai.com/in/en/find-a-car/grand-i10-nios/highlights
+Tucson,Hyundai,17027,4595,1877,1650,178,15.4,47,18,b,4,SUV,Diesel,5,170,https://www.hyundai.com/in/en/find-a-car/tucson/highlights
+IONIQ 5,Hyundai,17167,4509,1899,1833,194,,46,18,a,3,Crossover,EV,5,217,https://ioniq5.hyundai.co.in/?_gl=1*1vn4cxk*_gcl_au*MjE1Mjg3NTMuMTc2NTk5NjEyMA..*_ga*MTE4Mzk3Mzc5OC4xNzY1OTk2MTIw*_ga_6WPDL2LSQZ*czE3NjU5OTYxMjAkbzEkZzEkdDE3NjU5OTYyMzkkajgkbDAkaDA.
+Seltos,Kia,27348,4721,1949,1828,196,18.1,25,15,b,3,SUV,Diesel,5,160,https://www.kia.com/in/our-vehicles/seltos/showroom.html?utm_source=google&utm_medium=cpc&utm_campaign=search_seltos_brand_dec25&utm_content=text&utm_term=brand&gad_source=1&gad_campaignid=21661676765&gbraid=0AAAAADJaFb3Z3pIGLQKOmVK0YQnIBYJC9&gclid=Cj0KCQiAxonKBhC1ARIsAIHq_ls1erbf13TETT_rsoEFM9VRyXBX2TSf7jYZtSfNyawI6jr_cJmVd_kaAhC5EALw_wcB
+Sonet,Kia,2737,4167,1721,1738,188,20.4,33,9,b,5,SUV,Petrol/Diesel,5,110,https://www.kia.com/in/our-vehicles/sonet/showroom.html
+Carens,Kia,4612,4619,1765,1801,163,19.4,55,11,b,4,MPV,Diesel,7,100,https://www.kia.com/in/our-vehicles/carens/showroom.html
+Carnival,Kia,11021,4779,1778,1897,238,12.6,22,11,b,4,MPV,Petrol,6,150,https://www.kia.com/in/our-vehicles/carnival/showroom.html
+EV6,Kia,25583,4631,1940,1820,203,,53,10,a,5,Crossover,EV,5,250,https://www.kia.com/in/our-vehicles/ev6/showroom.html
+Innova Crysta,Toyota,20279,4653,1870,1830,221,15.5,53,18,a,5,MPV,Diesel,7,150,https://www.toyotabharat.com/showroom/innova-crysta/
+Innova HyCross,Toyota,25671,4541,1811,1843,176,17.7,55,18,a,4,MPV,Petrol,6,160,https://www.toyotabharat.com/showroom/innova/
+Fortuner,Toyota,26948,4554,1861,1757,150,21.9,46,12,a,5,SUV,Diesel,7,201,https://www.toyotabharat.com/showroom/fortuner/index-fortuner.html
+Glanza,Toyota,8766,3427,1657,1550,209,23.9,60,16,a,3,Hatchback,Petrol,5,85,https://www.toyotabharat.com/showroom/glanza/
+Urban Cruiser Hyryder,Toyota,16871,4717,1922,1799,197,22.0,39,17,a,3,SUV,Petrol/Hybrid,5,100,https://www.toyotabharat.com/showroom/urbancruiser-hyryder/
+Camry Hybrid,Toyota,8158,4568,1987,1753,207,21.8,27,18,a,3,Crossover,Hybrid,5,230,https://www.toyotabharat.com/showroom/camry/
+City,Honda,1641,4933,1713,1545,187,14.6,32,7,a,4,Sedan,Petrol,5,150,https://www.hondacarindia.com/honda-city-5th-generation
+Amaze,Honda,14344,4548,1771,1533,173,21.8,20,7,a,3,Sedan,Petrol Hybrid,5,90,https://www.hondacarindia.com/honda-amaze
+Elevate,Honda,9395,4909,1954,1726,191,20.8,52,15,a,4,SUV,Diesel,5,119,https://www.hondacarindia.com/honda-elevate
+WR-V,Honda,6495,4530,1859,1762,169,12.0,56,8,a,3,SUV,Petrol,5,119,https://www.hondacarindia.com/honda-wr-v
+Kwid,Renault,25609,3622,1662,1537,206,21.7,15,4,a,4,Hatchback,Petrol,5,67,https://www.renault.com/in/en/find-a-car/kwid/highlights
+Triber,Renault,6930,4570,1777,1776,177,18.9,17,7,a,3,MPV,Diesel,6,72,https://www.renault.com/in/en/find-a-car/triber/highlights
+Kiger,Renault,15167,4193,1700,1648,188,15.6,19,4,a,3,SUV,Petrol,5,90,https://www.renault.com/in/en/find-a-car/kiger/highlights
+C-Class,Mercedes-Benz,13320,4409,1820,1547,209,26.8,197,65,c,5,Sedan,Hybrid,5,200,https://www.mercedes-benz.com/in/en/passengercars/mercedes-benz-cars/c-class/highlights.html
+E-Class,Mercedes-Benz,28263,4663,1908,1526,235,15.4,149,47,c,5,Sedan,Petrol/Diesel,5,250,https://www.mercedes-benz.com/in/en/passengercars/mercedes-benz-cars/e-class/highlights.html
+S-Class,Mercedes-Benz,19188,4729,1889,1483,214,20.1,199,82,c,5,Sedan,Petrol/Diesel,5,282,https://www.mercedes-benz.com/in/en/passengercars/mercedes-benz-cars/s-class/highlights.html
+GLC,Mercedes-Benz,9831,4761,1837,1829,200,19.4,232,79,c,5,SUV,Diesel,5,250,https://www.mercedes-benz.com/in/en/passengercars/mercedes-benz-cars/glc/highlights.html
+GLE,Mercedes-Benz,15175,4685,1932,1763,189,18.7,175,89,c,5,SUV,Diesel,7,270,https://www.mercedes-benz.com/in/en/passengercars/mercedes-benz-cars/gle/highlights.html
+EQS,Mercedes-Benz,8053,4554,1891,1762,231,,215,45,b,5,SUV,EV,5,355,https://www.mercedes-benz.com/in/en/passengercars/mercedes-benz-cars/eqs/highlights.html
+3 Series,BMW,3235,5104,1709,1438,234,16.1,205,74,c,5,Sedan,Petrol/Diesel,5,190,https://www.bmw.com/en/new-cars/3-series.html
+5 Series,BMW,2231,4964,1885,1420,211,24.9,175,45,c,5,Sedan,Hybrid,5,190,https://www.bmw.com/en/new-cars/5-series.html
+X3,BMW,12990,4858,1868,1851,206,17.2,228,65,c,5,SUV,Diesel,7,197,https://www.bmw.com/en/new-cars/x3.html
+X5,BMW,7385,4438,1957,1719,240,20.3,111,81,c,5,SUV,Diesel,7,375,https://www.bmw.com/en/new-cars/x5.html
+i4,BMW,9870,4841,1923,1622,153,,137,69,b,5,SUV,EV,5,340,https://www.bmw.com/en/new-cars/i4.html
+i7,BMW,12542,4769,1834,1871,206,,216,79,b,5,SUV,EV,5,536,https://www.bmw.com/en/new-cars/i7.html
+M340i,BMW,3235,5104,1709,1438,234,16.1,74,73,c,5,Sedan,Petrol,5,370,https://www.bmw.com/en/new-cars/m340i.html
 M2,BMW,4416,4436,1811,1695,166,15.1,148,45,c,5,SUV,Diesel,5,473,
-A4,Audi,12341,5010,1807,1483,158,23.3,185,88,c,5,Sedan,Petrol,5,190,
-A6,Audi,10852,4762,1851,1516,222,16.4,112,81,c,5,Sedan,Petrol,5,242,
-Q3,Audi,19576,4769,1844,1782,182,12.4,219,45,c,5,SUV,Petrol,5,188,
-Q5,Audi,27277,4451,1835,1678,176,18.6,159,63,c,5,SUV,Petrol,7,261,
-e-tron GT,Audi,8085,4575,1892,1835,186,,127,80,b,5,SUV,EV,5,523,
+A4,Audi,12341,5010,1807,1483,158,23.3,185,88,c,5,Sedan,Petrol,5,190,https://www.audi.in/in/web/en/models/a4/a4-avant.html
+A6,Audi,10852,4762,1851,1516,222,16.4,112,81,c,5,Sedan,Petrol,5,242,https://www.audi.in/in/web/en/models/a6/a6-avant.html
+Q3,Audi,19576,4769,1844,1782,182,12.4,219,45,c,5,SUV,Petrol,5,188,https://www.audi.in/in/web/en/models/q3/q3-avant.html
+Q5,Audi,27277,4451,1835,1678,176,18.6,159,63,c,5,SUV,Petrol,7,261,https://www.audi.in/in/web/en/models/q5/q5-avant.html
+e-tron GT,Audi,8085,4575,1892,1835,186,,127,80,b,5,SUV,EV,5,523,https://www.audi.in/in/web/en/models/e-tron-gt/e-tron-gt-avant.html
 XC60,Volvo,2740,4888,1967,1692,233,12.2,199,77,b,5,SUV,Petrol,7,250,
-S90,Volvo,13693,5068,1891,1453,172,26.5,242,45,b,5,Sedan,Hybrid,5,250,
-C40 Recharge,Volvo,24473,4451,1820,1669,219,,205,78,b,5,SUV,EV,5,408,
-Virtus,Volkswagen,7670,4833,1757,1482,211,22.0,49,18,b,5,Sedan,Petrol,5,148,
-Taigun,Volkswagen,26888,4386,1973,1701,230,16.0,54,13,b,4,SUV,Petrol,5,148,
-Tiguan,Volkswagen,24188,4800,1997,1889,196,20.6,41,15,b,3,SUV,Petrol,5,204,
+S90,Volvo,13693,5068,1891,1453,172,26.5,242,45,b,5,Sedan,Hybrid,5,250,https://www.volvocarindia.com/volvo-s90
+C40 Recharge,Volvo,24473,4451,1820,1669,219,,205,78,b,5,SUV,EV,5,408,https://www.volvocarindia.com/volvo-c40-recharge
+Virtus,Volkswagen,7670,4833,1757,1482,211,22.0,49,18,b,5,Sedan,Petrol,5,148,https://www.volkswagen.in/virtus
+Taigun,Volkswagen,26888,4386,1973,1701,230,16.0,54,13,b,4,SUV,Petrol,5,148,https://www.volkswagen.in/taigun
+Tiguan,Volkswagen,24188,4800,1997,1889,196,20.6,41,15,b,3,SUV,Petrol,5,204,https://www.volkswagen.in/tiguan
 Slavia,Škoda,25027,4965,1777,1540,150,26.7,36,14,b,3,Sedan,Petrol,5,148,
-Kushaq,Škoda,12842,4357,1918,1894,159,17.7,48,18,b,4,SUV,Petrol,5,148,
-Octavia,Škoda,15857,4825,1701,1468,198,18.1,53,14,c,4,Sedan,Petrol,5,190,
-Superb,Škoda,22433,4587,1783,1536,230,20.2,31,17,c,3,Sedan,Petrol,5,190,
-Hector,MG,13012,4756,1999,1805,210,12.1,38,12,b,5,SUV,Petrol/Diesel,5,150,
-Astor,MG,19868,4782,1955,1633,227,16.5,59,9,b,4,SUV,Petrol/Diesel,5,140,
-ZS EV,MG,17854,4699,1897,1695,178,,54,14,a,3,SUV,EV,5,177,
-Comet EV,MG,12722,3591,1695,1530,153,,60,11,a,5,Hatchback,EV,5,42,
-C3,Citroën,23343,3890,1717,1600,178,19.4,18,5,b,3,Hatchback,Petrol/Diesel,5,108,
-C3 Aircross,Citroën,10023,4388,1958,1714,161,14.8,10,7,b,3,SUV,Petrol,5,110,
-C5 Aircross,Citroën,9793,4938,1977,1838,167,16.4,18,9,b,4,SUV,Petrol,5,177,
+Kushaq,Škoda,12842,4357,1918,1894,159,17.7,48,18,b,4,SUV,Petrol,5,148,https://www.skoda.in/kushaq
+Octavia,Škoda,15857,4825,1701,1468,198,18.1,53,14,c,4,Sedan,Petrol,5,190,https://www.skoda.in/octavia
+Superb,Škoda,22433,4587,1783,1536,230,20.2,31,17,c,3,Sedan,Petrol,5,190,https://www.skoda.in/superb
+Hector,MG,13012,4756,1999,1805,210,12.1,38,12,b,5,SUV,Petrol/Diesel,5,150,https://www.mgmotor.in/hector
+Astor,MG,19868,4782,1955,1633,227,16.5,59,9,b,4,SUV,Petrol/Diesel,5,140,https://www.mgmotor.in/astor
+ZS EV,MG,17854,4699,1897,1695,178,,54,14,a,3,SUV,EV,5,177,https://www.mgmotor.in/zs-ev
+Comet EV,MG,12722,3591,1695,1530,153,,60,11,a,5,Hatchback,EV,5,42,https://www.mgmotor.in/comet-ev
+C3,Citroën,23343,3890,1717,1600,178,19.4,18,5,b,3,Hatchback,Petrol/Diesel,5,108,https://www.citroen.in/c3
+C3 Aircross,Citroën,10023,4388,1958,1714,161,14.8,10,7,b,3,SUV,Petrol,5,110,https://www.citroen.in/c3-aircross
+C5 Aircross,Citroën,9793,4938,1977,1838,167,16.4,18,9,b,4,SUV,Petrol,5,177,https://www.citroen.in/c5-aircross
 Magnite,Nissan,15393,4185,1706,1668,182,17.9,12,4,b,5,SUV,Petrol,5,100,
-Kicks,Nissan,1946,4747,1804,1744,172,16.6,16,9,b,4,SUV,Petrol,5,156,
-Compass,Jeep,25029,4580,1891,1701,233,14.3,42,12,b,4,SUV,petrol/Diesel,5,167,
-Meridian,Jeep,12249,4880,1922,1744,194,12.3,22,18,b,5,SUV,Petrol,5,167,
-Wrangler,Jeep,13105,4986,1786,1763,238,12.3,25,10,c,5,SUV,Petrol,4,250,
-F-Pace,Jaguar,13303,4492,1812,1856,206,17.9,169,77,c,5,SUV,Diesel,5,247,
-I-Pace,Jaguar,9387,4324,1906,1716,162,,161,88,C,5,SUV,EV,5,394,
+Kicks,Nissan,1946,4747,1804,1744,172,16.6,16,9,b,4,SUV,Petrol,5,156,https://www.nissan.in/kicks
+Compass,Jeep,25029,4580,1891,1701,233,14.3,42,12,b,4,SUV,petrol/Diesel,5,167,https://www.jeep.com/compass
+Meridian,Jeep,12249,4880,1922,1744,194,12.3,22,18,b,5,SUV,Petrol,5,167,https://www.jeep.com/meridian
+Wrangler,Jeep,13105,4986,1786,1763,238,12.3,25,10,c,5,SUV,Petrol,4,250,https://www.jeep.com/wrangler
+F-Pace,Jaguar,13303,4492,1812,1856,206,17.9,169,77,c,5,SUV,Diesel,5,247,https://www.jaguar.com/f-pace
+I-Pace,Jaguar,9387,4324,1906,1716,162,,161,88,C,5,SUV,EV,5,394,https://www.jaguar.com/i-pace
