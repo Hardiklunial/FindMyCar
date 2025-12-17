@@ -65,6 +65,7 @@
 
         <!-- Filters Component -->
         <Filters 
+          ref="filtersComponent"
           :filters="filters"
           @update:carType="filters.carType = $event"
           @update:fuelType="filters.fuelType = $event"
@@ -577,6 +578,12 @@ export default {
           console.log('Sample vehicle:', vehicles[0]);
           console.log('Sample vehicle Link:', vehicles[0].Link);
         }
+        
+        // Sort vehicles by weighted score using filters component
+        if (vehicles.length > 0 && this.$refs.filtersComponent) {
+          vehicles = this.$refs.filtersComponent.sortVehiclesByScore(vehicles);
+        }
+        
         this.vehicles = vehicles;
         this.selectedVehicle = null;
         

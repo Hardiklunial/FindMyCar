@@ -218,6 +218,86 @@ export default {
     },
   },
   emits: ['update:carType', 'update:fuelType', 'update:seats', 'update:budgetMin', 'update:budgetMax', 'update:sizeImportance', 'update:powerImportance', 'update:safetyImportance', 'update:popularityImportance', 'update:fuelEfficiencyImportance', 'update:maintenanceCostImportance'],
+  methods: {
+    // Sort vehicles by weighted score
+    sortVehiclesByScore(vehicles) {
+      // Step 1: Calculate size (volume) for each vehicle
+      vehicles.forEach(vehicle => {
+        const length = parseFloat(vehicle.Length) || 0;
+        const width = parseFloat(vehicle.Width) || 0;
+        const height = parseFloat(vehicle.Height) || 0;
+        vehicle.size = length * width * height; // Volume
+      });
+
+      // Step 2: Find maximum values for normalization (from filtered vehicles only)
+      let maxSize = 0;
+      let maxPower = 0;
+      let maxSafety = 0;
+      let maxSales = 0;
+      let minMaintenance = Infinity;
+
+      vehicles.forEach(vehicle => {
+        if (vehicle.size > maxSize) maxSize = vehicle.size;
+        if (parseFloat(vehicle.Power) > maxPower) maxPower = parseFloat(vehicle.Power) || 0;
+        if (parseFloat(vehicle.SafetyRating) > maxSafety) maxSafety = parseFloat(vehicle.SafetyRating) || 0;
+        if (parseFloat(vehicle.Sales) > maxSales) maxSales = parseFloat(vehicle.Sales) || 0;
+        const maintenance = parseFloat(vehicle.MaintenanceCost) || 0;
+        if (maintenance > 0 && maintenance < minMaintenance) minMaintenance = maintenance;
+      });
+
+      // Step 3: Calculate score for each vehicle
+      vehicles.forEach(vehicle => {
+        // Normalize each metric to 0-10 scale
+        let sizeScore = 0;
+        if (maxSize > 0) {
+          sizeScore = (vehicle.size / maxSize) * 10;
+        }
+
+        let powerScore = 0;
+        if (maxPower > 0) {
+          powerScore = ((parseFloat(vehicle.Power) || 0) / maxPower) * 10;
+        }
+
+        let safetyScore = 0;
+        if (maxSafety > 0) {
+          safetyScore = ((parseFloat(vehicle.SafetyRating) || 0) / maxSafety) * 10;
+        }
+
+        let popularityScore = 0;
+        if (maxSales > 0) {
+          popularityScore = ((parseFloat(vehicle.Sales) || 0) / maxSales) * 10;
+        }
+
+        // Fuel Efficiency: Convert A/B/C to score (A=10, B=5, C=1)
+        let efficiencyScore = 0;
+        const efficiency = (vehicle.FuelEfficiency || '').toUpperCase().trim();
+        if (efficiency === 'A') efficiencyScore = 10;
+        else if (efficiency === 'B') efficiencyScore = 5;
+        else if (efficiency === 'C') efficiencyScore = 1;
+
+        // Maintenance: Lower is better, so invert the formula
+        let maintenanceScore = 0;
+        const maintenance = parseFloat(vehicle.MaintenanceCost) || 0;
+        if (maintenance > 0 && minMaintenance > 0 && minMaintenance !== Infinity) {
+          maintenanceScore = (minMaintenance / maintenance) * 10;
+        }
+
+        // Step 4: Multiply each score by its weight and add them up
+        const totalScore = 
+          (sizeScore * this.filters.sizeImportance) +
+          (powerScore * this.filters.powerImportance) +
+          (safetyScore * this.filters.safetyImportance) +
+          (popularityScore * this.filters.popularityImportance) +
+          (efficiencyScore * this.filters.fuelEfficiencyImportance) +
+          (maintenanceScore * this.filters.maintenanceCostImportance);
+
+        vehicle.total_score = totalScore;
+      });
+
+      // Step 5: Sort by total_score (highest first)
+      return vehicles.sort((a, b) => (b.total_score || 0) - (a.total_score || 0));
+    },
+  },
 };
 </script>
 
