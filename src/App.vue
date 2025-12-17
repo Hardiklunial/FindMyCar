@@ -115,9 +115,22 @@
             @click="selectVehicle(vehicle)"
             :class="['vehicle-bar glass-card rounded-lg overflow-hidden card-hover cursor-pointer flex items-center gap-6 p-4', { 'ring-2 ring-red-600 bg-red-50': selectedVehicle && selectedVehicle.VehicleName === vehicle.VehicleName }]"
           >
-            <!-- Vehicle Image Placeholder -->
+            <!-- Vehicle Image -->
             <div class="flex-shrink-0 w-32 h-24 bg-gradient-to-br from-gray-900 to-gray-800 rounded-lg relative overflow-hidden">
-              <svg class="absolute inset-0 w-full h-full opacity-40" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <img 
+                v-if="vehicle['Image URL'] && vehicle['Image URL'].trim()"
+                :src="vehicle['Image URL'].trim()"
+                :alt="vehicle.VehicleName"
+                class="w-full h-full object-cover"
+                @error="handleImageError($event)"
+              />
+              <svg 
+                v-else
+                class="absolute inset-0 w-full h-full opacity-40" 
+                viewBox="0 0 400 300" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path d="M80 150 L110 130 L150 120 L190 120 L230 110 L310 110 L350 120 L380 140 L390 150 L380 160 L350 165 L330 165 L310 160 L130 160 L110 165 L80 165 Z" fill="#D90429" opacity="0.8" />
                 <ellipse cx="130" cy="165" rx="18" ry="18" fill="#fff" />
                 <ellipse cx="130" cy="165" rx="10" ry="10" fill="#000" />
@@ -193,6 +206,16 @@
             >
               ×
             </button>
+          </div>
+
+          <!-- Vehicle Image in Modal -->
+          <div v-if="selectedVehicle['Image URL'] && selectedVehicle['Image URL'].trim()" class="mb-6">
+            <img 
+              :src="selectedVehicle['Image URL'].trim()"
+              :alt="selectedVehicle.VehicleName"
+              class="w-full h-64 object-cover rounded-lg"
+              @error="handleImageError($event)"
+            />
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -464,7 +487,7 @@ export default {
             const columns = line.split(',');
             const vehicle = {};
             
-            // Map all headers to columns
+            // Map all headers to columns by header name (order-independent)
             headers.forEach((header, index) => {
               if (index < columns.length) {
                 vehicle[header] = columns[index]?.trim() || '';
@@ -472,19 +495,6 @@ export default {
                 vehicle[header] = '';
               }
             });
-
-            // Special handling for Link field - it's always the last column
-            // If we have fewer columns than headers, the Link might be missing
-            // If we have the same or more, Link is the last one
-            if (columns.length >= headers.length) {
-              // Link is the last column
-              vehicle.Link = columns[columns.length - 1]?.trim() || '';
-            } else if (linkIndex >= 0 && linkIndex < columns.length) {
-              // Try to get Link from its index position
-              vehicle.Link = columns[linkIndex]?.trim() || '';
-            } else {
-              vehicle.Link = '';
-            }
 
             // Debug first vehicle
             if (i === 1) {
@@ -725,6 +735,12 @@ export default {
         console.error('Error deleting comment:', error);
         alert('Error deleting comment. Please try again.');
       }
+    },
+    // Handle image loading errors
+    handleImageError(event) {
+      // Hide broken image and show placeholder
+      event.target.style.display = 'none';
+      // The fallback SVG will show automatically via v-else
     },
   },
 };
