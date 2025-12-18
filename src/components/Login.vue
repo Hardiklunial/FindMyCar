@@ -1,22 +1,24 @@
 <template>
   <div class="login_registration">
-    <Button
-      v-if="!isUserLoggedIn"
-      color="green"
-      text="Login"
-      eventName="login_clicked"
-      @login_clicked="handleLogin"
-    />
+    <div class="flex gap-3 mb-4">
+      <button
+        v-if="!isUserLoggedIn"
+        @click="handleLogin"
+        :class="['px-6 py-2 rounded-lg font-semibold transition-all', isLoginActive ? 'bg-red-600 text-white shadow-lg' : 'bg-gray-200 text-gray-700 hover:bg-gray-300']"
+      >
+        Login
+      </button>
 
-    <Button
-      v-if="!isUserLoggedIn"
-      color="grey"
-      text="Register"
-      eventName="register_clicked"
-      @register_clicked="handleRegister"
-    />
+      <button
+        v-if="!isUserLoggedIn"
+        @click="handleRegister"
+        :class="['px-6 py-2 rounded-lg font-semibold transition-all', isRegisterActive ? 'bg-red-600 text-white shadow-lg' : 'bg-gray-200 text-gray-700 hover:bg-gray-300']"
+      >
+        Register
+      </button>
+    </div>
 
-    <p v-if="isRegistrationSuccessfull">Registration Successfull Please Login To Continue</p>
+    <p v-if="isRegistrationSuccessfull" class="text-green-600 font-medium mb-4">Registration Successful! Please Login To Continue</p>
   </div>
   <form class="add-form" @submit="onSubmit" v-if="isLoginActive || isRegisterActive">
     <div v-if="isRegisterActive" class="form-control">
@@ -36,7 +38,6 @@
 </template>
 
 <script>
-import Button from './Button.vue';
 import { localHost } from '../utils/urls';
 import bcrypt from 'bcryptjs';
 
@@ -51,9 +52,6 @@ export default {
       isRegisterActive: false,
       isRegistrationSuccessfull: false,
     };
-  },
-  components: {
-    Button,
   },
   props: {
     isUserLoggedIn: Boolean,
@@ -76,10 +74,11 @@ export default {
       this.email = '';
       this.password = '';
     },
+    // Handle form submission for both login and registration
     async onSubmit(e) {
       e.preventDefault();
       
-      // Validation for registration
+      // Validate name for registration
       if (this.isRegisterActive) {
         if (!this.name || this.name.trim().length < 2) {
           alert('Please enter a valid name (at least 2 characters)');
@@ -87,22 +86,27 @@ export default {
         }
       }
       
+      // Basic email and password validation
       if (this.email.length > 6 && this.email.includes('@') && this.password.length > 6) {
+        // Hash password before storing (never store plain text passwords!)
         const user = {
           email: this.email,
           password: bcrypt.hashSync(this.password, 10),
         };
 
-        // Add name for registration
+        // Add name only for registration
         if (this.isRegisterActive) {
           user.name = this.name.trim();
         }
 
+        // Registration flow
         if (this.isRegisterActive) {
+          // Check if email already exists
           const userName = await fetch(`${localHost}/users?email=${this.email}`);
           const userNameData = await userName.json();
 
           if (userNameData.length === 0) {
+            // Email is available, create new user
             const res = await fetch(`${localHost}/users`, {
               method: 'POST',
               headers: {
@@ -119,19 +123,23 @@ export default {
           } else {
             alert(`Username ${this.email} is not available`);
           }
-        } else if (this.isLoginActive) {
+        } 
+        // Login flow
+        else if (this.isLoginActive) {
+          // Find user by email
           const existingUserName = await fetch(`${localHost}/users?email=${this.email}`);
           const existingUserNameData = await existingUserName.json();
 
           if (existingUserNameData.length > 0) {
+            // Compare entered password with stored hashed password
             let doesPasswordMatch = bcrypt.compareSync(
               this.password,
               existingUserNameData[0].password,
             );
 
             if (doesPasswordMatch) {
-              console.log('Password Matches');
               this.isLoginActive = false;
+              // Store user data in Vuex store
               const userData = {
                 email: existingUserNameData[0].email,
                 id: existingUserNameData[0].id,
@@ -145,8 +153,6 @@ export default {
           } else {
             alert('User Not Found');
           }
-
-          console.log('login in the user');
         }
       } else {
         alert('Email not valid or password should be greater than 6 digits');

@@ -16,11 +16,11 @@
       No news available. Run <code>npm run scrape-news</code> to fetch news.
     </div>
     
-    <!-- News Display - Shows 6 items, changes every 20 seconds -->
+    <!-- News Display - Shows all items with scrollbar -->
     <div v-else class="news-ticker-container">
       <div 
-        v-for="(item, index) in currentNewsItems" 
-        :key="`${item.id}-${currentIndex}-${index}`"
+        v-for="(item, index) in news" 
+        :key="item.id || index"
         class="news-item"
         @click="openNews(item.url)"
       >
@@ -41,34 +41,10 @@ export default {
       news: [],
       loading: true,
       error: null,
-      currentIndex: 0,
-      newsInterval: null,
     };
-  },
-  computed: {
-    currentNewsItems() {
-      if (this.news.length === 0) return [];
-      const itemsPerPage = 6;
-      const startIndex = this.currentIndex;
-      const items = [];
-      
-      // Get 6 items starting from currentIndex, wrapping around if needed
-      for (let i = 0; i < itemsPerPage; i++) {
-        const index = (startIndex + i) % this.news.length;
-        items.push(this.news[index]);
-      }
-      
-      return items;
-    },
   },
   mounted() {
     this.fetchNews();
-  },
-  beforeUnmount() {
-    // Clean up interval when component is destroyed
-    if (this.newsInterval) {
-      clearInterval(this.newsInterval);
-    }
   },
   methods: {
     async fetchNews() {
@@ -83,9 +59,7 @@ export default {
         const data = await response.json();
         this.news = Array.isArray(data) ? data : [];
       } catch (error) {
-        console.error('Error fetching news:', error);
         this.error = 'Unable to load news. Make sure json-server is running.';
-        // Fallback: try to load from db.json directly
         try {
           const response = await fetch('/db.json');
           const db = await response.json();
@@ -96,23 +70,7 @@ export default {
         }
       } finally {
         this.loading = false;
-        // Start the news rotation timer
-        if (this.news.length > 0) {
-          this.startNewsRotation();
-        }
       }
-    },
-    startNewsRotation() {
-      // Clear any existing interval
-      if (this.newsInterval) {
-        clearInterval(this.newsInterval);
-      }
-      
-      // Change news every 20 seconds (20000 milliseconds)
-      // Move by 6 items at a time
-      this.newsInterval = setInterval(() => {
-        this.currentIndex = (this.currentIndex + 6) % this.news.length;
-      }, 20000);
     },
     openNews(url) {
       if (url) {
@@ -121,12 +79,10 @@ export default {
     },
     cleanAuthor(author) {
       if (!author) return 'CarWale Team';
-      // Remove any timestamp that might be attached
       return author.replace(/\d+\s+(?:hours?|days?|minutes?)\s+ago/gi, '').trim() || 'CarWale Team';
     },
     cleanTimestamp(timestamp) {
       if (!timestamp) return 'Recently';
-      // Remove any "By Author" prefix
       return timestamp.replace(/By\s+[^0-9]+/gi, '').trim() || 'Recently';
     },
   },
@@ -180,11 +136,33 @@ export default {
 .news-ticker-container {
   flex: 1;
   overflow-y: auto;
+  overflow-x: hidden;
   position: relative;
   margin-top: 10px;
   display: flex;
   flex-direction: column;
   gap: 12px;
+  /* Custom scrollbar styling */
+  scrollbar-width: thin;
+  scrollbar-color: #D90429 rgba(0, 0, 0, 0.1);
+}
+
+.news-ticker-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.news-ticker-container::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+
+.news-ticker-container::-webkit-scrollbar-thumb {
+  background: #D90429;
+  border-radius: 4px;
+}
+
+.news-ticker-container::-webkit-scrollbar-thumb:hover {
+  background: #c70325;
 }
 
 .news-item {

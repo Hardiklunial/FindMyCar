@@ -1,106 +1,108 @@
 <template>
   <div class="filters-container">
-    <!-- Advanced Filters -->
-    <div class="max-w-2xl mx-auto mb-8">
-      <div class="glass-card rounded-3xl p-6 mb-6">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <!-- Body Type Filter -->
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-2">Body Type</label>
-            <select 
-              :value="filters.carType"
-              @change="$emit('update:carType', $event.target.value)"
-              class="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-gray-900 focus:outline-none focus:border-red-600"
-            >
-              <option value="">All Types</option>
-              <option>Sedan</option>
-              <option>Hatchback</option>
-              <option>SUV</option>
-              <option>MPV</option>
-              <option>Compact SUV</option>
-            </select>
-          </div>
+    <!-- Unified Card with Filters and Sorting -->
+    <div class="glass-card rounded-2xl p-6 shadow-lg">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- Filters Section -->
+        <div>
+          <h3 class="text-lg font-bold text-gray-900 mb-4 pb-2 border-b border-gray-200">Filters</h3>
+          <div class="space-y-3">
+            <!-- Body Type Filter -->
+            <div>
+              <label class="block text-xs font-semibold text-gray-600 mb-1.5 uppercase tracking-wide">Body Type</label>
+              <select 
+                :value="filters.carType"
+                @change="$emit('update:carType', $event.target.value)"
+                class="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-gray-900 focus:outline-none focus:border-red-600"
+              >
+                <option value="">All Types</option>
+                <option>Sedan</option>
+                <option>Hatchback</option>
+                <option>SUV</option>
+                <option>MPV</option>
+                <option>Compact SUV</option>
+              </select>
+            </div>
 
-          <!-- Fuel Type Filter -->
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-2">Fuel Type</label>
-            <select 
-              :value="filters.fuelType"
-              @change="$emit('update:fuelType', $event.target.value)"
-              class="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-gray-900 focus:outline-none focus:border-red-600"
-            >
-              <option value="">All Fuel Types</option>
-              <option>Petrol</option>
-              <option>Diesel</option>
-              <option>Petrol Hybrid</option>
-              <option>Diesel Hybrid</option>
-              <option>Electric</option>
-              <option>EV</option>
-              <option>Petrol CNG</option>
-              <option>Petrol/CNG</option>
-            </select>
-          </div>
+            <!-- Fuel Type Filter -->
+            <div>
+              <label class="block text-xs font-semibold text-gray-600 mb-1.5 uppercase tracking-wide">Fuel Type</label>
+              <select 
+                :value="filters.fuelType"
+                @change="$emit('update:fuelType', $event.target.value)"
+                class="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-gray-900 focus:outline-none focus:border-red-600"
+              >
+                <option value="">All Fuel Types</option>
+                <option>Petrol</option>
+                <option>Diesel</option>
+                <option>Hybrid</option>
+                <option>Electric</option>
+                <option>EV</option>
+                <option>CNG</option>
+                <option>Petrol CNG</option>
+                <option>Petrol/CNG</option>
+              </select>
+            </div>
 
-          <!-- Seats Filter -->
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-2">Seats</label>
-            <select 
-              :value="filters.seats"
-              @change="$emit('update:seats', $event.target.value)"
-              class="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-gray-900 focus:outline-none focus:border-red-600"
-            >
-              <option value="">Any</option>
-              <option>2</option>
-              <option>4</option>
-              <option>5</option>
-              <option>6-7</option>
-            </select>
-          </div>
+            <!-- Seats Filter -->
+            <div>
+              <label class="block text-xs font-semibold text-gray-600 mb-1.5 uppercase tracking-wide">Seats</label>
+              <select 
+                :value="filters.seats"
+                @change="$emit('update:seats', $event.target.value)"
+                class="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-gray-900 focus:outline-none focus:border-red-600"
+              >
+                <option value="">Any</option>
+                <option>2</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6-7</option>
+              </select>
+            </div>
 
-          <!-- Budget Filter -->
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-2">
-              Budget: ₹{{ filters.budget.min }} - ₹{{ filters.budget.max }} Lakhs
-            </label>
-            <div class="flex gap-2">
-              <div class="flex-1">
-                <label class="text-xs text-gray-500 mb-1 block">Min: ₹{{ filters.budget.min }}L</label>
-                <input 
-                  type="range" 
-                  :min="1" 
-                  :max="filters.budget.max" 
-                  :value="filters.budget.min"
-                  @input="$emit('update:budgetMin', parseInt($event.target.value))"
-                  class="w-full"
-                />
-              </div>
-              <div class="flex-1">
-                <label class="text-xs text-gray-500 mb-1 block">Max: ₹{{ filters.budget.max }}L</label>
-                <input 
-                  type="range" 
-                  :min="filters.budget.min" 
-                  :max="500" 
-                  :value="filters.budget.max"
-                  @input="$emit('update:budgetMax', parseInt($event.target.value))"
-                  class="w-full"
-                />
+            <!-- Budget Filter -->
+            <div>
+              <label class="block text-xs font-semibold text-gray-600 mb-1.5 uppercase tracking-wide">
+                Budget: ₹{{ filters.budget.min }} - ₹{{ filters.budget.max }}L
+              </label>
+              <div class="flex gap-2">
+                <div class="flex-1">
+                  <label class="text-xs text-gray-500 mb-1 block">Min: ₹{{ filters.budget.min }}L</label>
+                  <input 
+                    type="range" 
+                    :min="1" 
+                    :max="filters.budget.max" 
+                    :value="filters.budget.min"
+                    @input="$emit('update:budgetMin', parseInt($event.target.value))"
+                    class="w-full"
+                  />
+                </div>
+                <div class="flex-1">
+                  <label class="text-xs text-gray-500 mb-1 block">Max: ₹{{ filters.budget.max }}L</label>
+                  <input 
+                    type="range" 
+                    :min="filters.budget.min" 
+                    :max="500" 
+                    :value="filters.budget.max"
+                    @input="$emit('update:budgetMax', parseInt($event.target.value))"
+                    class="w-full"
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Sorting Preferences -->
-      <div class="max-w-2xl mx-auto mb-8">
-        <div class="glass-card rounded-3xl p-6 mb-6">
-          <h3 class="text-lg font-semibold text-gray-900 mb-4">Sorting Preferences</h3>
-          <p class="text-sm text-gray-600 mb-4">Rate how important each aspect is to you (1-10)</p>
+        <!-- Sorting Preferences Section -->
+        <div>
+          <h3 class="text-lg font-bold text-gray-900 mb-4 pb-2 border-b border-gray-200">Sorting Preferences</h3>
+          <p class="text-xs text-gray-500 mb-4">Rate importance (1-10)</p>
           
-          <div class="space-y-4">
+          <div class="space-y-3">
             <!-- Vehicle Size Importance -->
             <div>
-              <div class="flex justify-between items-center mb-2">
-                <label class="text-sm font-medium text-gray-700">Vehicle Size</label>
+              <div class="flex justify-between items-center mb-1.5">
+                <label class="text-xs font-semibold text-gray-600 uppercase tracking-wide">Vehicle Size</label>
                 <span class="text-sm font-bold text-red-600">{{ filters.sizeImportance || 5 }}/10</span>
               </div>
               <input 
@@ -115,8 +117,8 @@
 
             <!-- Power Importance -->
             <div>
-              <div class="flex justify-between items-center mb-2">
-                <label class="text-sm font-medium text-gray-700">Power</label>
+              <div class="flex justify-between items-center mb-1.5">
+                <label class="text-xs font-semibold text-gray-600 uppercase tracking-wide">Power</label>
                 <span class="text-sm font-bold text-red-600">{{ filters.powerImportance || 5 }}/10</span>
               </div>
               <input 
@@ -131,8 +133,8 @@
 
             <!-- Safety Rating Importance -->
             <div>
-              <div class="flex justify-between items-center mb-2">
-                <label class="text-sm font-medium text-gray-700">Safety Rating</label>
+              <div class="flex justify-between items-center mb-1.5">
+                <label class="text-xs font-semibold text-gray-600 uppercase tracking-wide">Safety Rating</label>
                 <span class="text-sm font-bold text-red-600">{{ filters.safetyImportance || 5 }}/10</span>
               </div>
               <input 
@@ -147,8 +149,8 @@
 
             <!-- Popularity Importance -->
             <div>
-              <div class="flex justify-between items-center mb-2">
-                <label class="text-sm font-medium text-gray-700">Popularity</label>
+              <div class="flex justify-between items-center mb-1.5">
+                <label class="text-xs font-semibold text-gray-600 uppercase tracking-wide">Popularity</label>
                 <span class="text-sm font-bold text-red-600">{{ filters.popularityImportance || 5 }}/10</span>
               </div>
               <input 
@@ -163,8 +165,8 @@
 
             <!-- Fuel Efficiency Importance -->
             <div>
-              <div class="flex justify-between items-center mb-2">
-                <label class="text-sm font-medium text-gray-700">Fuel Efficiency</label>
+              <div class="flex justify-between items-center mb-1.5">
+                <label class="text-xs font-semibold text-gray-600 uppercase tracking-wide">Fuel Efficiency</label>
                 <span class="text-sm font-bold text-red-600">{{ filters.fuelEfficiencyImportance || 5 }}/10</span>
               </div>
               <input 
@@ -179,8 +181,8 @@
 
             <!-- Maintenance Cost Importance -->
             <div>
-              <div class="flex justify-between items-center mb-2">
-                <label class="text-sm font-medium text-gray-700">Maintenance Cost</label>
+              <div class="flex justify-between items-center mb-1.5">
+                <label class="text-xs font-semibold text-gray-600 uppercase tracking-wide">Maintenance Cost</label>
                 <span class="text-sm font-bold text-red-600">{{ filters.maintenanceCostImportance || 5 }}/10</span>
               </div>
               <input 
@@ -219,70 +221,56 @@ export default {
   },
   emits: ['update:carType', 'update:fuelType', 'update:seats', 'update:budgetMin', 'update:budgetMax', 'update:sizeImportance', 'update:powerImportance', 'update:safetyImportance', 'update:popularityImportance', 'update:fuelEfficiencyImportance', 'update:maintenanceCostImportance'],
   methods: {
-    // Sort vehicles by weighted score
+    // Sort vehicles by weighted score based on user preferences
+    // This calculates a score for each vehicle and sorts them from best to worst match
     sortVehiclesByScore(vehicles) {
-      // Step 1: Calculate size (volume) for each vehicle
-      vehicles.forEach(vehicle => {
+      // Step 1: Calculate vehicle size (volume = length × width × height) for each vehicle
+      const vehicleSizes = new Map();
+      vehicles.forEach((vehicle, index) => {
         const length = parseFloat(vehicle.Length) || 0;
         const width = parseFloat(vehicle.Width) || 0;
         const height = parseFloat(vehicle.Height) || 0;
-        vehicle.size = length * width * height; // Volume
+        vehicleSizes.set(index, length * width * height);
       });
 
-      // Step 2: Find maximum values for normalization (from filtered vehicles only)
+      // Step 2: Find maximum values for normalization (to compare vehicles fairly)
       let maxSize = 0;
       let maxPower = 0;
       let maxSafety = 0;
       let maxSales = 0;
-      let minMaintenance = Infinity;
+      let maxEfficiency = 0;
 
-      vehicles.forEach(vehicle => {
-        if (vehicle.size > maxSize) maxSize = vehicle.size;
+      vehicles.forEach((vehicle, index) => {
+        const size = vehicleSizes.get(index);
+        if (size > maxSize) maxSize = size;
         if (parseFloat(vehicle.Power) > maxPower) maxPower = parseFloat(vehicle.Power) || 0;
         if (parseFloat(vehicle.SafetyRating) > maxSafety) maxSafety = parseFloat(vehicle.SafetyRating) || 0;
         if (parseFloat(vehicle.Sales) > maxSales) maxSales = parseFloat(vehicle.Sales) || 0;
-        const maintenance = parseFloat(vehicle.MaintenanceCost) || 0;
-        if (maintenance > 0 && maintenance < minMaintenance) minMaintenance = maintenance;
+        const efficiency = parseFloat(vehicle.FuelEfficiency) || 0;
+        if (efficiency > maxEfficiency) maxEfficiency = efficiency;
       });
 
       // Step 3: Calculate score for each vehicle
-      vehicles.forEach(vehicle => {
-        // Normalize each metric to 0-10 scale
-        let sizeScore = 0;
-        if (maxSize > 0) {
-          sizeScore = (vehicle.size / maxSize) * 10;
-        }
+      const vehicleScores = [];
+      vehicles.forEach((vehicle, index) => {
+        const size = vehicleSizes.get(index);
+        
+        // Normalize each metric to 0-10 scale (0 = worst, 10 = best)
+        const sizeScore = maxSize > 0 ? (size / maxSize) * 10 : 0;
+        const powerScore = maxPower > 0 ? ((parseFloat(vehicle.Power) || 0) / maxPower) * 10 : 0;
+        const safetyScore = maxSafety > 0 ? ((parseFloat(vehicle.SafetyRating) || 0) / maxSafety) * 10 : 0;
+        const popularityScore = maxSales > 0 ? ((parseFloat(vehicle.Sales) || 0) / maxSales) * 10 : 0;
+        const efficiencyScore = maxEfficiency > 0 ? ((parseFloat(vehicle.FuelEfficiency) || 0) / maxEfficiency) * 10 : 0;
 
-        let powerScore = 0;
-        if (maxPower > 0) {
-          powerScore = ((parseFloat(vehicle.Power) || 0) / maxPower) * 10;
-        }
-
-        let safetyScore = 0;
-        if (maxSafety > 0) {
-          safetyScore = ((parseFloat(vehicle.SafetyRating) || 0) / maxSafety) * 10;
-        }
-
-        let popularityScore = 0;
-        if (maxSales > 0) {
-          popularityScore = ((parseFloat(vehicle.Sales) || 0) / maxSales) * 10;
-        }
-
-        // Fuel Efficiency: Convert A/B/C to score (A=10, B=5, C=1)
-        let efficiencyScore = 0;
-        const efficiency = (vehicle.FuelEfficiency || '').toUpperCase().trim();
-        if (efficiency === 'A') efficiencyScore = 10;
-        else if (efficiency === 'B') efficiencyScore = 5;
-        else if (efficiency === 'C') efficiencyScore = 1;
-
-        // Maintenance: Lower is better, so invert the formula
+        // Maintenance cost: A = cheapest (10), B = medium (5), C = expensive (1)
+        const maintenance = (vehicle.MaintenanceCost || '').toUpperCase().trim();
         let maintenanceScore = 0;
-        const maintenance = parseFloat(vehicle.MaintenanceCost) || 0;
-        if (maintenance > 0 && minMaintenance > 0 && minMaintenance !== Infinity) {
-          maintenanceScore = (minMaintenance / maintenance) * 10;
-        }
+        if (maintenance === 'A') maintenanceScore = 10;
+        else if (maintenance === 'B') maintenanceScore = 5;
+        else if (maintenance === 'C') maintenanceScore = 1;
 
-        // Step 4: Multiply each score by its weight and add them up
+        // Step 4: Calculate total score by multiplying each metric by its importance weight
+        // Higher importance = that metric has more impact on the final score
         const totalScore = 
           (sizeScore * this.filters.sizeImportance) +
           (powerScore * this.filters.powerImportance) +
@@ -291,11 +279,22 @@ export default {
           (efficiencyScore * this.filters.fuelEfficiencyImportance) +
           (maintenanceScore * this.filters.maintenanceCostImportance);
 
-        vehicle.total_score = totalScore;
+        vehicleScores.push({ index, totalScore });
       });
 
-      // Step 5: Sort by total_score (highest first)
-      return vehicles.sort((a, b) => (b.total_score || 0) - (a.total_score || 0));
+      // Step 5: Sort by total score (highest first = best match)
+      vehicleScores.sort((a, b) => (b.totalScore || 0) - (a.totalScore || 0));
+      
+      // Step 6: Return vehicles in sorted order
+      return vehicleScores.map(item => {
+        const originalVehicle = vehicles[item.index];
+        // Create new object to avoid Vue reactivity issues
+        const newVehicle = {};
+        Object.keys(originalVehicle).forEach(key => {
+          newVehicle[key] = originalVehicle[key];
+        });
+        return newVehicle;
+      });
     },
   },
 };

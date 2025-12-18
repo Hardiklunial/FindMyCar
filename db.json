@@ -5,6 +5,18 @@
       "email": "test@gmail.com",
       "name": "Test User",
       "password": "$2b$10$nCMSWKE98cNyDArHxgL3s.ySPukZJcBIZyf4vRntnS21wjNnLf7mS"
+    },
+    {
+      "id": "6331",
+      "email": "testing@gmail.com",
+      "password": "$2b$10$qLt5NmrBsxy7BIRBYwLMiuGac7BQpJDT9OAUHT99fkIRNxodjnMcm",
+      "name": "testing"
+    },
+    {
+      "id": "6430",
+      "email": "hardik@gmail.com",
+      "password": "$2b$10$jukRQMQcJ2AIcmlodoTOzOe3lGMXM.jlZL/MeFtqDedUoe5UHR/hK",
+      "name": "hardik"
     }
   ],
   "news": [
