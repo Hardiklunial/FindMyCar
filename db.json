@@ -21,140 +21,140 @@
   ],
   "news": [
     {
-      "id": "1",
+      "id": 1,
       "title": "2026 Indian Car of the Year (ICOTY) Jury Round Kicks Off",
       "url": "https://www.carwale.com/news/2026-indian-car-of-the-year-icoty-jury-round-kicks-off/",
       "author": "Sagar Bhanushali",
-      "timestamp": "6 hours ago",
-      "scrapedAt": "2025-12-17T19:48:29.163Z"
+      "timestamp": "13 hours ago",
+      "scrapedAt": "2025-12-18T02:12:07.954Z"
     },
     {
-      "id": "2",
+      "id": 2,
       "title": "Hyundai Verna Facelift Spied Again",
       "url": "https://www.carwale.com/news/hyundai-verna-facelift-spied-again/",
       "author": "Dwij Bhandut",
-      "timestamp": "7 hours ago",
-      "scrapedAt": "2025-12-17T19:48:29.163Z"
+      "timestamp": "14 hours ago",
+      "scrapedAt": "2025-12-18T02:12:07.955Z"
     },
     {
-      "id": "3",
+      "id": 3,
       "title": "Hyundai Nexo FCEV Secures 5-star Euro NCAP Rating",
       "url": "https://www.carwale.com/news/hyundai-nexo-fcev-secures-5-star-euro-ncap-rating/",
       "author": "Dwij Bhandut",
-      "timestamp": "8 hours ago",
-      "scrapedAt": "2025-12-17T19:48:29.163Z"
+      "timestamp": "15 hours ago",
+      "scrapedAt": "2025-12-18T02:12:07.955Z"
     },
     {
-      "id": "4",
+      "id": 4,
       "title": "Volkswagen ID.Cross Spied Testing in Near-production Guise",
       "url": "https://www.carwale.com/news/volkswagen-idcross-spied-testing-in-near-production-guise/",
       "author": "Desirazu Venkat",
-      "timestamp": "11 hours ago",
-      "scrapedAt": "2025-12-17T19:48:29.163Z"
+      "timestamp": "17 hours ago",
+      "scrapedAt": "2025-12-18T02:12:07.955Z"
     },
     {
-      "id": "5",
+      "id": 5,
       "title": "Tata Sierra Records Over 70,000 Bookings in 24 Hours",
       "url": "https://www.carwale.com/news/tata-sierra-records-over-70000-bookings-in-24-hours/",
       "author": "CarWale Team",
-      "timestamp": "12 hours ago",
-      "scrapedAt": "2025-12-17T19:48:29.164Z"
+      "timestamp": "18 hours ago",
+      "scrapedAt": "2025-12-18T02:12:07.956Z"
     },
     {
-      "id": "6",
+      "id": 6,
       "title": "Hyundai Announces December Discounts with Benefits up to Rs. 1.74 Lakh",
       "url": "https://www.carwale.com/news/hyundai-announces-december-discounts-with-benefits-up-to-rs-174-lakh/",
       "author": "Jay Shah",
-      "timestamp": "13 hours ago",
-      "scrapedAt": "2025-12-17T19:48:29.164Z"
+      "timestamp": "19 hours ago",
+      "scrapedAt": "2025-12-18T02:12:07.956Z"
     },
     {
-      "id": "7",
+      "id": 7,
       "title": "Renault Triber-based Nissan B-MPV to be Revealed Tomorrow",
       "url": "https://www.carwale.com/news/renault-triber-based-nissan-b-mpv-to-be-revealed-tomorrow/",
       "author": "Desirazu Venkat",
-      "timestamp": "13 hours ago",
-      "scrapedAt": "2025-12-17T19:48:29.164Z"
+      "timestamp": "20 hours ago",
+      "scrapedAt": "2025-12-18T02:12:07.956Z"
     },
     {
-      "id": "8",
+      "id": 8,
       "title": "Citroen Posts 3x Growth in Q4 2025, Eyes India Ops Expansion",
       "url": "https://www.carwale.com/news/citroen-posts-3x-growth-in-q4-2025-eyes-india-ops-expansion/",
       "author": "Dwij Bhandut",
       "timestamp": "1 day ago",
-      "scrapedAt": "2025-12-17T19:48:29.164Z"
+      "scrapedAt": "2025-12-18T02:12:07.956Z"
     },
     {
-      "id": "9",
+      "id": 9,
       "title": "Tata Sierra Bookings Open; Deliveries from 15 January",
       "url": "https://www.carwale.com/news/tata-sierra-bookings-open-deliveries-from-15-january/",
       "author": "Desirazu Venkat",
       "timestamp": "1 day ago",
-      "scrapedAt": "2025-12-17T19:48:29.164Z"
+      "scrapedAt": "2025-12-18T02:12:07.956Z"
     },
     {
-      "id": "10",
+      "id": 10,
       "title": "Mahindra XUV 7XO Interior Teased",
       "url": "https://www.carwale.com/news/mahindra-xuv-7xo-interior-teased/",
       "author": "Jay Shah",
       "timestamp": "1 day ago",
-      "scrapedAt": "2025-12-17T19:48:29.164Z"
+      "scrapedAt": "2025-12-18T02:12:07.956Z"
     },
     {
-      "id": "11",
+      "id": 11,
       "title": "BMW Speedtop Concept Patented in India",
       "url": "https://www.carwale.com/news/bmw-speedtop-concept-patented-in-india/",
       "author": "Dwij Bhandut",
       "timestamp": "2 days ago",
-      "scrapedAt": "2025-12-17T19:48:29.164Z"
+      "scrapedAt": "2025-12-18T02:12:07.956Z"
     },
     {
-      "id": "12",
+      "id": 12,
       "title": "Mahindra XUV 7XO Pre-Bookings Open for Rs. 21,000",
       "url": "https://www.carwale.com/news/mahindra-xuv-7xo-pre-bookings-open-for-rs-21000/",
       "author": "Jay Shah",
       "timestamp": "2 days ago",
-      "scrapedAt": "2025-12-17T19:48:29.164Z"
+      "scrapedAt": "2025-12-18T02:12:07.956Z"
     },
     {
-      "id": "13",
+      "id": 13,
       "title": "New MG Hector to Remain Petrol-only for Now, Diesel to Arrive Next Year",
       "url": "https://www.carwale.com/news/new-mg-hector-to-remain-petrol-only-for-now-diesel-to-arrive-next-year/",
       "author": "Sagar Bhanushali",
       "timestamp": "2 days ago",
-      "scrapedAt": "2025-12-17T19:48:29.164Z"
+      "scrapedAt": "2025-12-18T02:12:07.956Z"
     },
     {
-      "id": "14",
+      "id": 14,
       "title": "MG Hector Facelift Launched; Prices Start at Rs. 11.99 Lakh",
       "url": "https://www.carwale.com/news/mg-hector-facelift-launched-prices-start-at-rs-1199-lakh/",
       "author": "Dwij Bhandut",
       "timestamp": "2 days ago",
-      "scrapedAt": "2025-12-17T19:48:29.164Z"
+      "scrapedAt": "2025-12-18T02:12:07.956Z"
     },
     {
-      "id": "15",
+      "id": 15,
       "title": "Mahindra Scorpio N-based Pickup Interior Spied",
       "url": "https://www.carwale.com/news/mahindra-scorpio-n-based-pickup-interior-spied/",
       "author": "Dwij Bhandut",
       "timestamp": "2 days ago",
-      "scrapedAt": "2025-12-17T19:48:29.164Z"
+      "scrapedAt": "2025-12-18T02:12:07.956Z"
     },
     {
-      "id": "16",
+      "id": 16,
       "title": "Tata Sierra Accomplished and Accomplished+ Prices Announced",
       "url": "https://www.carwale.com/news/tata-sierra-accomplished-and-accomplished-prices-announced/",
       "author": "Jay Shah",
       "timestamp": "3 days ago",
-      "scrapedAt": "2025-12-17T19:48:29.164Z"
+      "scrapedAt": "2025-12-18T02:12:07.956Z"
     },
     {
-      "id": "17",
+      "id": 17,
       "title": "Mahindra Scorpio N Facelift Spotted Again",
       "url": "https://www.carwale.com/news/mahindra-scorpio-n-facelift-spotted-again/",
       "author": "Dwij Bhandut",
       "timestamp": "3 days ago",
-      "scrapedAt": "2025-12-17T19:48:29.164Z"
+      "scrapedAt": "2025-12-18T02:12:07.956Z"
     }
   ],
   "comments": [

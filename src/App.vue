@@ -6,7 +6,7 @@
         <!-- Logo -->
         <div class="flex items-center gap-2">
           <div class="text-3xl font-bold tracking-tight">
-            <span class="text-white">Find</span><span class="text-red-600">My</span><span class="text-white">Car</span>
+            <span class="text-white">Auto</span><span class="text-red-600">Pick</span>
           </div>
         </div>
         
